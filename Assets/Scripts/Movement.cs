@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR;
 
 public class Movement
 {
@@ -15,8 +16,7 @@ public class Movement
     }
     public void move(Vector3 dir)
     {
-
-        transform.position += dir * speed * Time.deltaTime;
+        rb.MovePosition(rb.position + dir * speed * Time.deltaTime);
         
     }
     bool IsGrounded()
