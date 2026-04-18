@@ -1,35 +1,28 @@
-using Unity.VisualScripting;
+using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Shoothook : MonoBehaviour
+public class HookLogic
 {
-    [SerializeField] GameObject hookPre;
-    [SerializeField] Transform point;
-    [SerializeField] float speed = 15f;
-    bool isDestroyed;
-
-
-    GameObject hook;
-    [SerializeField]Transform player;
-    [SerializeField] Rigidbody playerRb;
-    [SerializeField] float pullSpeed = 1f;
 
 
 
-    void Update()
+    /*
+    void hookLogicUpdate()
     {
+
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             shootHook();
-           
+
         }
         if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
-            
+
             Destroy(hook);
             isDestroyed = true;
-        
+
         }
 
         if (hook != null)
@@ -53,19 +46,5 @@ public class Shoothook : MonoBehaviour
         }
 
     }
-    void shootHook()
-    {
-        if (hook != null)
-        {
-            Destroy(hook);
-        }
-
-        hook = Instantiate(hookPre, point.position, point.rotation);
-        Rigidbody rb = hook.GetComponent<Rigidbody>();
-        if (rb != null) 
-        {
-            rb.AddForce(point.forward * speed, ForceMode.Impulse);
-        }
-
-    }
+    */
 }
