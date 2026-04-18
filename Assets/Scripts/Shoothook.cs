@@ -8,6 +8,9 @@ public class Shoothook : MonoBehaviour
     [SerializeField] float speed = 15f;
 
     GameObject hook;
+    [SerializeField]Transform player;
+    [SerializeField] float pullSpeed = 1f;
+
 
 
     void Update()
@@ -16,8 +19,22 @@ public class Shoothook : MonoBehaviour
         {
             shootHook();
         }
-    }
 
+        if (hook != null)
+        {
+            Hook hookScript = hook.GetComponent<Hook>();
+
+            if (hookScript.isAttached)
+            {
+                float distance = Vector3.Distance(player.position, hook.transform.position);
+
+                if (distance > 2)
+                {
+                    player.position = Vector3.MoveTowards(player.position, hook.transform.position, pullSpeed * Time.deltaTime);
+                }
+            }
+        }
+    }
     void shootHook()
     {
         if (hook != null)

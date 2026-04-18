@@ -4,6 +4,7 @@ public class Hook : MonoBehaviour
 {
     Rigidbody rb;
     bool hit = false;
+    public bool isAttached = false;
 
     private void Awake()
     {
@@ -21,6 +22,8 @@ public class Hook : MonoBehaviour
     void stopHook()
     {
         hit = true;
+        isAttached = true;
+
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         rb.isKinematic = true;
