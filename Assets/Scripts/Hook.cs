@@ -5,7 +5,8 @@ public class Hook : MonoBehaviour
     Rigidbody rb;
     bool hit = false;
     public bool isAttached = false;
-
+    public bool isHeavier;
+    public Rigidbody grabbedRb;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -16,7 +17,17 @@ public class Hook : MonoBehaviour
     {
         if (hit) return;
 
-        if (collision.gameObject.GetComponent<Rigidbody>() != null) { stopHook(); }
+        Rigidbody objectRb = collision.gameObject.GetComponent<Rigidbody>();
+        if (objectRb != null) 
+        {
+            
+            if (objectRb.mass > 0.99f)
+            {
+                isHeavier = false;
+                stopHook();
+            }
+            else { isHeavier = true; stopHook(); grabbedRb = objectRb; }
+        }
     }
 
     void stopHook()

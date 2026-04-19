@@ -38,16 +38,41 @@ public class Shoothook : MonoBehaviour
 
             if (hookScript.isAttached)
             {
-                float distance = Vector3.Distance(player.position, hook.transform.position);
-                playerRb.useGravity = false;
-                if (distance > 2)
+                
+                if (hookScript.isHeavier == false)
                 {
-                    player.position = Vector3.MoveTowards(player.position, hook.transform.position, pullSpeed * Time.deltaTime);
+                    float distance = Vector3.Distance(player.position, hook.transform.position);
+                    playerRb.useGravity = false;
+                    if (distance > 2)
+                    {
+                        player.position = Vector3.MoveTowards(player.position, hook.transform.position, pullSpeed * Time.deltaTime);
+                    }
                 }
+                else
+                {
+                    if (hookScript.grabbedRb != null)
+                    {
+                        float distance = Vector3.Distance(hookScript.grabbedRb.transform.position, player.position);
+                        Vector3 puntoDeAgarre = transform.position + (transform.forward * 1f);
+
+                        if (distance > 1.2f)
+                        {
+                            hookScript.grabbedRb.transform.position = Vector3.MoveTowards(hookScript.grabbedRb.transform.position, puntoDeAgarre, pullSpeed * Time.deltaTime);
+                        }else 
+                        {
+                            hookScript.grabbedRb.transform.position = puntoDeAgarre;
+                            hookScript.grabbedRb.transform.rotation = transform.rotation;
+                        }
+                    }
+
+                }
+
+                
+                
             }
         }
         if (isDestroyed)
-        {
+        {           
             playerRb.useGravity = true;
             isDestroyed = false;
         }
