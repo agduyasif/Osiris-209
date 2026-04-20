@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Cilindro
+  - Inicio
+  - Fin
+  - Equilibrio
   layers:
   - Default
   - TransparentFX

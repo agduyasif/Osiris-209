@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movecontrol: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  playerCamera: {fileID: 4591261018167279412}
 --- !u!136 &3641598005770283747
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -201,6 +202,9 @@ MonoBehaviour:
   hookPre: {fileID: 4293991177075197600, guid: 8b1f5789ec50b3d48acf67e2fab63e09, type: 3}
   point: {fileID: 6090414357148073760}
   speed: 15
+  player: {fileID: 0}
+  playerRb: {fileID: 0}
+  pullSpeed: 1
 --- !u!1 &5072000174989727700
 GameObject:
   m_ObjectHideFlags: 0

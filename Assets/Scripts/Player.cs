@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] InputActionReference movecontrol;
     Rigidbody rb;
+    [SerializeField] Camera playerCamera;
+    bool isBalancing = false;
+    BalanceLogic balanceLogic = new BalanceLogic();
 
 
     void Start()
@@ -17,11 +20,52 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         movement = new Movement(transform, speed, rb);
         control = new Control(movecontrol, movement, transform);
+
+        rb = GetComponent<Rigidbody>();
+        movement = new Movement(transform, speed, rb);
+        control = new Control(movecontrol, movement, transform);
+
     }
 
     private void Update()
     {
-        control.ArtificialUpdate();
+        if (!isBalancing)
+        {
+            control.ArtificialUpdate();
+        }
+        else
+        {
+            Vector2 input = movecontrol.action.ReadValue<Vector2>();
+
+            balanceLogic.UpdateLogic(input.x);
+
+            Vector3 dirAdelante = transform.forward * input.y;
+            balanceLogic.TubeMove(dirAdelante, speed, rb);
+
+            float inclinacion = balanceLogic.balanceHandle * 20f;
+            playerCamera.transform.localRotation = Quaternion.Euler(0, 0, -inclinacion);
+
+            if (balanceLogic.CheckIfFallen())
+            {
+                Debug.Log("TE CAISTE");
+                isBalancing = false;
+                transform.position = new Vector3(2.5f, 0.9f, -0.3f);
+            }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Equilibrio"))
+        {
+            isBalancing = true;
+            balanceLogic.Reset();
+        }
+
+        if (other.CompareTag("Fin"))
+        {
+            isBalancing = false;
+            playerCamera.transform.localRotation = Quaternion.identity;
+        }
     }
 
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class Control 
+public class Control
 {
     public InputActionReference MoveControl;
     Transform transform;
@@ -13,6 +13,7 @@ public class Control
         MoveControl = _move;
         transform = _trasform;
     }
+
     public void ArtificialUpdate()
     {
         Vector2 move = MoveControl.action.ReadValue<Vector2>();
@@ -22,8 +23,11 @@ public class Control
 
         movement.move(dir);
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame) {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
             movement.jump();
         }
+
     }
+
 }
