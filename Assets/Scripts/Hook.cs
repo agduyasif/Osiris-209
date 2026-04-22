@@ -18,6 +18,9 @@ public class Hook : MonoBehaviour
         if (hit) return;
 
         Rigidbody objectRb = collision.gameObject.GetComponent<Rigidbody>();
+        if (collision.gameObject.CompareTag("Player")) { return;}
+        
+
         if (objectRb != null) 
         {
             
@@ -38,6 +41,7 @@ public class Hook : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         rb.isKinematic = true;
+        gameObject.SetActive(false);
 
     }
 

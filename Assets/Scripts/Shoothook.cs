@@ -61,7 +61,7 @@ public class Shoothook : MonoBehaviour
                         }else 
                         {
                             hookScript.grabbedRb.transform.position = puntoDeAgarre;
-                            hookScript.grabbedRb.transform.rotation = transform.rotation;
+                       
                         }
                     }
 
