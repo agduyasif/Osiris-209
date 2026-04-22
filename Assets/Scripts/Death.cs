@@ -1,4 +1,4 @@
-using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Death : MonoBehaviour
@@ -7,7 +7,9 @@ public class Death : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-           
+            string currentScene = SceneManager.GetActiveScene().name;
+
+           SceneManager.LoadScene(currentScene);
         }
     }
 }

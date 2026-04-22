@@ -5,7 +5,7 @@ public class Hook : MonoBehaviour
     Rigidbody rb;
     bool hit = false;
     public bool isAttached = false;
-    public bool isHeavier;
+    public bool isPlayer;
     public Rigidbody grabbedRb;
     private void Awake()
     {
@@ -24,12 +24,12 @@ public class Hook : MonoBehaviour
         if (objectRb != null) 
         {
             
-            if (objectRb.mass > 0.99f)
+            if (collision.gameObject.CompareTag("Player"))
             {
-                isHeavier = false;
+                isPlayer = true;
                 stopHook();
             }
-            else { isHeavier = true; stopHook(); grabbedRb = objectRb; }
+            else { isPlayer = false; stopHook(); grabbedRb = objectRb; }
         }
     }
 

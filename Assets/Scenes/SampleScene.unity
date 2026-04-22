@@ -821,6 +821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 506912533}
   - component: {fileID: 506912532}
+  - component: {fileID: 506912534}
   m_Layer: 0
   m_Name: Death
   m_TagString: Untagged
@@ -864,6 +865,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &506912534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506912531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8037bea380ab34e8da4c58ad4dd089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &529579116
 GameObject:
   m_ObjectHideFlags: 0
@@ -5298,6 +5311,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780800325025940999, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780800325025940999, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3743018663826938208, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
