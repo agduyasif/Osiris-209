@@ -7,6 +7,7 @@ public class Hook : MonoBehaviour
     public bool isAttached = false;
     public bool isPlayer;
     public Rigidbody grabbedRb;
+    public bool isGrapabble;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -17,19 +18,23 @@ public class Hook : MonoBehaviour
     {
         if (hit) return;
 
-        Rigidbody objectRb = collision.gameObject.GetComponent<Rigidbody>();
-        if (collision.gameObject.CompareTag("Player")) { return;}
         
+        if (collision.gameObject.CompareTag("Player")) { return;}
 
+        if (collision.gameObject.CompareTag("Grappable"))
+        { 
+            isPlayer = false; 
+            isGrapabble = true;
+            stopHook();
+            return;
+        }
+        Rigidbody objectRb = collision.gameObject.GetComponent<Rigidbody>();
         if (objectRb != null) 
-        {
-            
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                isPlayer = true;
-                stopHook();
-            }
-            else { isPlayer = false; stopHook(); grabbedRb = objectRb; }
+        {      
+            isPlayer = false;
+            isGrapabble = false;
+            stopHook(); 
+            grabbedRb = objectRb; 
         }
     }
 

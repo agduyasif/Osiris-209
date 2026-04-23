@@ -39,7 +39,7 @@ public class Shoothook : MonoBehaviour
             if (hookScript.isAttached)
             {
                 
-                if (hookScript.isPlayer == false)
+                if (hookScript.isPlayer == false && hookScript.isGrapabble == true)
                 {
                     float distance = Vector3.Distance(player.position, hook.transform.position);
                     playerRb.useGravity = false;
@@ -48,7 +48,7 @@ public class Shoothook : MonoBehaviour
                         player.position = Vector3.MoveTowards(player.position, hook.transform.position, pullSpeed * Time.deltaTime);
                     }
                 }
-                else
+                else 
                 {
                     if (hookScript.grabbedRb != null)
                     {
