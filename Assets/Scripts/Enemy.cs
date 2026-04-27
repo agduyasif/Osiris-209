@@ -2,15 +2,32 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] Transform player;
+    float timer;
+    [SerializeField] GameObject granade;
+    [SerializeField] Transform spawnGranade;
+    float range = 10;
+    private void Update()
     {
-        
+        timer += Time.deltaTime;
+        transform.LookAt(player.position);
+        transform.localEulerAngles = new Vector3 (0, transform.localEulerAngles.y, 0);
+
+
+        if (Vector3.Distance(transform.position, player.position) < range)
+        {
+            if (timer > 8) 
+            {
+                Instantiate(granade, spawnGranade.transform.position, spawnGranade.rotation);
+                timer = 0;
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnDrawGizmosSelected()
     {
-        
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
