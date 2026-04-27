@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3743018663826938208}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58a1e9ec3d460f4b99de48aa7374d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 5
   movecontrol: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   playerCamera: {fileID: 4591261018167279412}
 --- !u!136 &3641598005770283747
@@ -201,10 +201,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hookPre: {fileID: 4293991177075197600, guid: 8b1f5789ec50b3d48acf67e2fab63e09, type: 3}
   point: {fileID: 6090414357148073760}
-  speed: 1.87
-  player: {fileID: 1487289236175403312}
-  playerRb: {fileID: 3743018663826938208}
-  pullSpeed: 13.67
+  speed: 15
+  player: {fileID: 0}
+  playerRb: {fileID: 0}
+  pullSpeed: 1
 --- !u!1 &5072000174989727700
 GameObject:
   m_ObjectHideFlags: 0
