@@ -59,13 +59,14 @@ public class Shoothook : MonoBehaviour
                         float distance = Vector3.Distance(hookScript.grabbedRb.transform.position, player.position);
                         Vector3 puntoDeAgarre = transform.position + (transform.forward * 1f);
 
-                        if (distance > 1.2f)
+                        if (distance > 2.2f)
                         {
                             hookScript.grabbedRb.transform.position = Vector3.MoveTowards(hookScript.grabbedRb.transform.position, puntoDeAgarre, realPullSpeed * Time.deltaTime);
+                            
                         }else 
                         {
                             hookScript.grabbedRb.transform.position = puntoDeAgarre;
-                       
+                            
                         }
                     }
 
