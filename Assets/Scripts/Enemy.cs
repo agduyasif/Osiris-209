@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
     float timer;
     [SerializeField] GameObject granade;
     [SerializeField] Transform spawnGranade;
-    float range = 10;
+    [SerializeField] float range = 10;
     private void Update()
     {
         timer += Time.deltaTime;

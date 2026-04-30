@@ -6,6 +6,7 @@ public class Explosive : MonoBehaviour
     [SerializeField] MeshRenderer expl;
     Rigidbody rb;
     float force = 5;
+    float expTime = 8;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -17,7 +18,7 @@ public class Explosive : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (time > 3)
+        if (time > expTime)
         {
             Collider[] objs = Physics.OverlapSphere(transform.position, 2);
             
@@ -29,9 +30,12 @@ public class Explosive : MonoBehaviour
                 {
                     string currentScene = SceneManager.GetActiveScene().name;
                     SceneManager.LoadScene(currentScene);
+                }else if (item.TryGetComponent<Wall>(out var wall))
+                {
+                    wall.destroyWall();
                 }
             }
-            if (time > 4) { Destroy(gameObject); }
+            if (time > expTime + 1) { Destroy(gameObject); }
         }
         
     }
