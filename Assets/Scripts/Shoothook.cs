@@ -43,6 +43,7 @@ public class Shoothook : MonoBehaviour
                 {
                     float distance = Vector3.Distance(player.position, hook.transform.position);
                     playerRb.useGravity = false;
+                    InHook.inHook(playerRb);
                     if (distance > 2)
                     {
                         player.position = Vector3.MoveTowards(player.position, hook.transform.position, pullSpeed * Time.deltaTime);
@@ -54,7 +55,7 @@ public class Shoothook : MonoBehaviour
                     {
                         float objetctMass = hookScript.grabbedRb.mass;
                         float realPullSpeed = pullSpeed / Mathf.Max(0.1f, objetctMass);
-
+                        InHook.inHook(hookScript.grabbedRb);
 
                         float distance = Vector3.Distance(hookScript.grabbedRb.transform.position, player.position);
                         Vector3 puntoDeAgarre = transform.position + (transform.forward * 1f);

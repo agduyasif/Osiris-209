@@ -43,8 +43,7 @@ public class Hook : MonoBehaviour
         hit = true;
         isAttached = true;
 
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
+        InHook.inHook(rb);
         rb.isKinematic = true;
         gameObject.SetActive(false);
 

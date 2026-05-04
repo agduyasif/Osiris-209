@@ -7,9 +7,7 @@ public class Death : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            string currentScene = SceneManager.GetActiveScene().name;
-
-           SceneManager.LoadScene(currentScene);
+            ResetScene.Reset();
         }
     }
 }

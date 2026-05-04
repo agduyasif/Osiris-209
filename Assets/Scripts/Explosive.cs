@@ -28,8 +28,7 @@ public class Explosive : MonoBehaviour
             {
                 if (item.TryGetComponent<Player>(out var player))
                 {
-                    string currentScene = SceneManager.GetActiveScene().name;
-                    SceneManager.LoadScene(currentScene);
+                    ResetScene.Reset();
                 }else if (item.TryGetComponent<Wall>(out var wall))
                 {
                     wall.destroyWall();
