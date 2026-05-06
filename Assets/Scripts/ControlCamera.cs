@@ -12,7 +12,7 @@ public class ControlCamera : MonoBehaviour
     [SerializeField] float sens = 1;
     SistemaMira mira;
 
-    [SerializeField] Camera Mcamera;
+    /*[SerializeField] Camera Mcamera;
     [SerializeField] Image nothing;
     [SerializeField] Image CanGrab;
     [SerializeField] Image CanGrapple;
@@ -20,7 +20,7 @@ public class ControlCamera : MonoBehaviour
     private void Start()
     {
         mira = new SistemaMira(Mcamera, nothing, CanGrab, CanGrapple);
-    }
+    }*/
     void Update()
     {
         move = LookControl.action.ReadValue<Vector2>();
@@ -33,6 +33,6 @@ public class ControlCamera : MonoBehaviour
         transform.rotation = Quaternion.Euler(-UpD, LeftR, 0);
         Player.rotation = Quaternion.Euler(0, LeftR, 0);
 
-        mira.MiraUpdate();
+        //mira.MiraUpdate();
     }
 }

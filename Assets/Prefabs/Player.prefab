@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 101171461798126285}
   - component: {fileID: 3675737483279265952}
   - component: {fileID: 1754374330595031012}
+  - component: {fileID: 8330409615440030662}
   - component: {fileID: 4591261018167279412}
   m_Layer: 6
   m_Name: Main Camera
@@ -455,6 +456,22 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &8330409615440030662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406572316825852176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894c517b2446c7f47bb636ee3af04c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mcamera: {fileID: 101171461798126285}
+  nothing: {fileID: 0}
+  CanGrab: {fileID: 0}
+  CanGrapple: {fileID: 0}
 --- !u!114 &4591261018167279412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +488,3 @@ MonoBehaviour:
   Player: {fileID: 1487289236175403312}
   LeftR: 0
   sens: 13.8
-  Mcamera: {fileID: 101171461798126285}
-  nothing: {fileID: 0}
-  CanGrab: {fileID: 0}
-  CanGrapple: {fileID: 0}

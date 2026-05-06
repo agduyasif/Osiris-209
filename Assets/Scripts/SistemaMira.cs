@@ -2,20 +2,20 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SistemaMira : MonoBehaviour
 {
-    Camera Mcamera;
-    Image nothing;
-    Image CanGrab;
-    Image CanGrapple;
+    [SerializeField] Camera Mcamera;
+    [SerializeField] Image nothing;
+    [SerializeField] Image CanGrab;
+    [SerializeField] Image CanGrapple;
 
-    public SistemaMira(Camera camera, Image _nothing, Image _CanGrab, Image _CanGrapple)
+    /*public SistemaMira(Camera camera, Image _nothing, Image _CanGrab, Image _CanGrapple)
     {
         Mcamera = camera;
         nothing = _nothing;
         CanGrab = _CanGrab;
         CanGrapple = _CanGrapple;
-    }
+    }*/
 
-    public void MiraUpdate()
+    void Update()
     {
         Ray rayo = Mcamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
