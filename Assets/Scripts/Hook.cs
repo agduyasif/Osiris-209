@@ -19,9 +19,9 @@ public class Hook : MonoBehaviour
         if (hit) return;
 
         
-        if (collision.gameObject.CompareTag("Player")) { return;}
+        if (collision.gameObject.layer == 6) { return;}
 
-        if (collision.gameObject.CompareTag("Grappable"))
+        if (collision.gameObject.layer == 7)
         { 
             isPlayer = false; 
             isGrapabble = true;

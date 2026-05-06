@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 529579120}
   - component: {fileID: 529579119}
   - component: {fileID: 529579118}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Techo
   m_TagString: Grappable
   m_Icon: {fileID: 0}

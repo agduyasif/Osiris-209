@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1335226702032169154}
   - component: {fileID: 3641598005770283747}
   - component: {fileID: 3743018663826938208}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6090414357148073760}
   - component: {fileID: 4790556178517626579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 8276002418351667233}
   - component: {fileID: 4014848691025613267}
   - component: {fileID: 5178710720233955292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: e
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 3675737483279265952}
   - component: {fileID: 1754374330595031012}
   - component: {fileID: 4591261018167279412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -470,3 +470,4 @@ MonoBehaviour:
   LookControl: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   Player: {fileID: 1487289236175403312}
   LeftR: 0
+  sens: 1
