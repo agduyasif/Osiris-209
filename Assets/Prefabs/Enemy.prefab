@@ -127,6 +127,7 @@ MonoBehaviour:
   player: {fileID: 0}
   granade: {fileID: 8159162936591432173, guid: 0d360769cd6a1e146ab1a05c46432146, type: 3}
   spawnGranade: {fileID: 4057287528826548208}
+  range: 24.25
 --- !u!1 &7884355952827783610
 GameObject:
   m_ObjectHideFlags: 0

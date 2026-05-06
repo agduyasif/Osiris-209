@@ -1,7 +1,7 @@
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.UI;
 public class ControlCamera : MonoBehaviour
 {
     public InputActionReference LookControl;
@@ -10,8 +10,17 @@ public class ControlCamera : MonoBehaviour
     public float LeftR;
     float UpD;
     [SerializeField] float sens = 1;
+    SistemaMira mira;
 
-   
+    [SerializeField] Camera Mcamera;
+    [SerializeField] Image nothing;
+    [SerializeField] Image CanGrab;
+    [SerializeField] Image CanGrapple;
+
+    private void Start()
+    {
+        mira = new SistemaMira(Mcamera, nothing, CanGrab, CanGrapple);
+    }
     void Update()
     {
         move = LookControl.action.ReadValue<Vector2>();
@@ -23,5 +32,7 @@ public class ControlCamera : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(-UpD, LeftR, 0);
         Player.rotation = Quaternion.Euler(0, LeftR, 0);
+
+        mira.MiraUpdate();
     }
 }

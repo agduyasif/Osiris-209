@@ -1,0 +1,53 @@
+using UnityEngine;
+using UnityEngine.UI;
+public class SistemaMira : MonoBehaviour
+{
+    Camera Mcamera;
+    Image nothing;
+    Image CanGrab;
+    Image CanGrapple;
+
+    public SistemaMira(Camera camera, Image _nothing, Image _CanGrab, Image _CanGrapple)
+    {
+        Mcamera = camera;
+        nothing = _nothing;
+        CanGrab = _CanGrab;
+        CanGrapple = _CanGrapple;
+    }
+
+    public void MiraUpdate()
+    {
+        Ray rayo = Mcamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+
+
+        if (Physics.Raycast(rayo, out RaycastHit hit, 100))
+        {
+
+            if (hit.collider.gameObject.layer == 7)
+            {
+                CanGrab.enabled = false;
+                nothing.enabled = false;
+                CanGrapple.enabled = true;
+            }
+            else if (hit.rigidbody != null)
+            {
+                CanGrab.enabled = true;
+                nothing.enabled = false;
+                CanGrapple.enabled = false;
+            }
+            else
+            {
+                CanGrab.enabled = false;
+                nothing.enabled = true;
+                CanGrapple.enabled = false;
+            }
+
+        }
+        else
+        {
+            CanGrab.enabled = false;
+            nothing.enabled = true;
+            CanGrapple.enabled = false;
+        }
+    }
+}
