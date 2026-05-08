@@ -28,6 +28,12 @@ public class Control
             movement.jump();
         }
 
+        if (move.magnitude > 0.1f)
+        {
+            VibrationMeter.Instance.AddVibration(30f * Time.deltaTime);
+            VibrationSystem.Instance.CreateVibration(transform.position, 10f);
+
+        }
     }
 
 }
