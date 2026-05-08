@@ -7,18 +7,14 @@ public class VibrationMeter : MonoBehaviour
     public float currentVibration = 0f;
     public float maxVibration = 100f;
     public float decaySpeed = 10f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created 
+    
 
     private void Awake()
     {
         Instance = this;
     }
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         currentVibration -= decaySpeed * Time.deltaTime;
@@ -29,7 +25,5 @@ public class VibrationMeter : MonoBehaviour
     {
         currentVibration += amount;
         currentVibration = Mathf.Clamp(currentVibration, 0, maxVibration);
-
-        Debug.Log("SUMANDO: " + amount);
     }
 }

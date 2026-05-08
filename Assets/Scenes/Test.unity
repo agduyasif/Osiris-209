@@ -3357,6 +3357,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1335226702032169154, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
+      propertyPath: vibration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1487289236175403312, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

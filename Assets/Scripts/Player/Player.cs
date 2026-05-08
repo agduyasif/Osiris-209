@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] Camera playerCamera;
     bool isBalancing = false;
     BalanceLogic balanceLogic = new BalanceLogic();
-
+    [SerializeField] bool vibration = true;
 
     void Start()
     {
@@ -20,11 +20,7 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
         movement = new Movement(transform, speed, rb, animator);
-        control = new Control(movecontrol, movement, transform);
-
-        rb = GetComponent<Rigidbody>();
-        movement = new Movement(transform, speed, rb, animator);
-        control = new Control(movecontrol, movement, transform);
+        control = new Control(movecontrol, movement, transform, vibration);
 
     }
 

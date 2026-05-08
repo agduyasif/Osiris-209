@@ -4,14 +4,15 @@ public class Control
 {
     public InputActionReference MoveControl;
     Transform transform;
-
+    bool vibration = true;
     public Movement movement;
 
-    public Control(InputActionReference _move, Movement _movement, Transform _trasform)
+    public Control(InputActionReference _move, Movement _movement, Transform _trasform, bool _vibration)
     {
         movement = _movement;
         MoveControl = _move;
         transform = _trasform;
+        vibration = _vibration;
     }
 
     public void ArtificialUpdate()
@@ -28,7 +29,7 @@ public class Control
             movement.jump();
         }
 
-        if (move.magnitude > 0.1f)
+        if (move.magnitude > 0.1f && vibration == true)
         {
             VibrationMeter.Instance.AddVibration(30f * Time.deltaTime);
             VibrationSystem.Instance.CreateVibration(transform.position, 10f);

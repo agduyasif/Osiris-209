@@ -64,10 +64,11 @@ public class Shoothook : MonoBehaviour
                         {
                             hookScript.grabbedRb.transform.position = Vector3.MoveTowards(hookScript.grabbedRb.transform.position, puntoDeAgarre, realPullSpeed * Time.deltaTime);
                             
-                        }else 
+                        }
+                        else
                         {
                             hookScript.grabbedRb.transform.position = puntoDeAgarre;
-                            
+
                         }
                     }
 
