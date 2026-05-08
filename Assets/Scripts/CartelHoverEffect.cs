@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 public class CartelHoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [Header("Asigná acá la FACHADA (la imagen del cartel)")]
     public GameObject imagenAMover;
 
     public float anguloInclinacion = 5f;

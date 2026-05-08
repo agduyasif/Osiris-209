@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     Movement movement;
     Control control;
+    public Animator animator;
     [SerializeField] float speed;
     [SerializeField] InputActionReference movecontrol;
     Rigidbody rb;
@@ -18,11 +19,11 @@ public class Player : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
-        movement = new Movement(transform, speed, rb);
+        movement = new Movement(transform, speed, rb, animator);
         control = new Control(movecontrol, movement, transform);
 
         rb = GetComponent<Rigidbody>();
-        movement = new Movement(transform, speed, rb);
+        movement = new Movement(transform, speed, rb, animator);
         control = new Control(movecontrol, movement, transform);
 
     }
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour
         if (!isBalancing)
         {
             control.ArtificialUpdate();
+            movement.CheckGroundedStatus();
         }
         else
         {
@@ -47,7 +49,6 @@ public class Player : MonoBehaviour
 
             if (balanceLogic.CheckIfFallen())
             {
-                Debug.Log("TE CAISTE");
                 isBalancing = false;
                 transform.position = new Vector3(2.5f, 0.9f, -0.3f);
             }
