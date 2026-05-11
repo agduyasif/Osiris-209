@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] float openHeight = 5f;
+    public float openHeight = 5f;
     [SerializeField] float smooth = 0.4f;
     
 
@@ -14,7 +14,7 @@ public class Door : MonoBehaviour
     void Start()
     {
         closedPos = transform.position;
-        openPos = closedPos + Vector3.down * openHeight;
+        openPos = closedPos + Vector3.up * openHeight;
         target = closedPos;
     }
 

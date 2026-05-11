@@ -10,7 +10,7 @@ public class Weight : MonoBehaviour
     [SerializeField] float pressDepth = 2;
     [SerializeField] float smooth = 0.4f;
     [SerializeField] Door door;
-    
+    bool isActive = false;
 
     Vector3 restPos;
     Vector3 pressedPos;
@@ -19,13 +19,16 @@ public class Weight : MonoBehaviour
     {
         restPos = platform.position;
         pressedPos = restPos + Vector3.down * pressDepth;
-
+        door.openHeight = pressDepth;
     }
 
     private void FixedUpdate()
     {
+        doorState();
         Vector3 target = totalMass >= weightRequiered ? pressedPos : restPos;
         platform.position = Vector3.SmoothDamp(platform.position, target, ref velocity, smooth);
+
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -67,6 +70,7 @@ public class Weight : MonoBehaviour
     {
         bool active = totalMass >= weightRequiered;
 
-       
+        if (active && !isActive) { door.open(); isActive = true; }
+        else if (!active && isActive) {  door.close(); isActive = false; }
     }
 }
