@@ -1,6 +1,6 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using static UnityEditor.Progress;
+
 
 public class Death : MonoBehaviour
 {
