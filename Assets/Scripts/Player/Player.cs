@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
             if (balanceLogic.CheckIfFallen())
             {
                 isBalancing = false;
-                transform.position = new Vector3(2.5f, 0.9f, -0.3f);
+                ResetScene.Reset();
             }
         }
     }
