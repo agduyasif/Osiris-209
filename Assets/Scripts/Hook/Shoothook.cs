@@ -92,11 +92,13 @@ public class Shoothook : MonoBehaviour
             Destroy(hook);
         }
 
-        hook = Instantiate(hookPre, point.position, point.rotation);
+        Vector3 direction = (SistemaMira.Instance.AimPoint - point.position).normalized;
+
+        hook = Instantiate(hookPre, point.position,Quaternion.LookRotation(direction));
         Rigidbody rb = hook.GetComponent<Rigidbody>();
         if (rb != null) 
         {
-            rb.AddForce(point.forward * speed, ForceMode.Impulse);
+            rb.AddForce(direction * speed, ForceMode.Impulse);
         }
 
     }
