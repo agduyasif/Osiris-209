@@ -16,6 +16,8 @@ public class SistemaMira : MonoBehaviour
     }*/
     public static SistemaMira Instance { get; private set; }
     public Vector3 AimPoint {  get; private set; }
+    public Rigidbody AimRb { get; private set; }
+    public bool IsGrappable { get; private set; }
 
     private void Awake()
     {
@@ -32,18 +34,27 @@ public class SistemaMira : MonoBehaviour
 
             if (hit.collider.gameObject.layer == 7)
             {
+                AimRb = null;
+                IsGrappable = true;
+
                 CanGrab.enabled = false;
                 nothing.enabled = false;
                 CanGrapple.enabled = true;
             }
             else if (hit.rigidbody != null)
             {
+                AimRb = hit.rigidbody;
+                IsGrappable = false;
+
                 CanGrab.enabled = true;
                 nothing.enabled = false;
                 CanGrapple.enabled = false;
             }
             else
             {
+                AimRb = null;
+                IsGrappable = false;
+
                 CanGrab.enabled = false;
                 nothing.enabled = true;
                 CanGrapple.enabled = false;
@@ -53,6 +64,8 @@ public class SistemaMira : MonoBehaviour
         else
         {
             AimPoint = rayo.GetPoint(100);
+            AimRb = null;
+            IsGrappable = false;
 
             CanGrab.enabled = false;
             nothing.enabled = true;

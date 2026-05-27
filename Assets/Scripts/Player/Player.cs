@@ -64,5 +64,10 @@ public class Player : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.identity;
         }
     }
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Vector3 size = new Vector3(0.6f, 0.2f, 0.6f);
+        Gizmos.DrawWireCube(transform.position + Vector3.down * 1.1f, size);
+    }
 }

@@ -18,11 +18,14 @@ public class Movement
     }
     public void move(Vector3 dir)
     {
-        rb.MovePosition(rb.position + dir * speed * Time.deltaTime);
         bool grounded = IsGrounded();
         bool moving = dir.magnitude > 0.1f;
 
+        float force = grounded ? speed : speed * 0.15f;
+        rb.AddForce(dir * force, ForceMode.Acceleration);
+
         anim.SetBool("IsJumping", !grounded);
+        
 
         if (grounded && moving)
         {
@@ -33,9 +36,10 @@ public class Movement
             anim.SetBool("IsWalking", false);
         }
     }
-    bool IsGrounded()
+    public bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, Vector3.down, 1.1f);
+        
+        return Physics.BoxCast(transform.position, new Vector3(0.3f, 0.1f, 0.3f), Vector3.down, Quaternion.identity, 1.1f);
     }
 
     public void jump()

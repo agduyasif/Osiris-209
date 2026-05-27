@@ -4,102 +4,68 @@ using UnityEngine.InputSystem;
 
 public class Shoothook : MonoBehaviour
 {
-    [SerializeField] GameObject hookPre;
-    [SerializeField] Transform point;
-    [SerializeField] float speed = 15f;
-    bool isDestroyed;
 
+    LineRenderer line;
 
-    GameObject hook;
-    [SerializeField]Transform player;
+    [SerializeField] Transform player;
     [SerializeField] Rigidbody playerRb;
     [SerializeField] float pullSpeed = 1f;
 
-
-
+    SpringJoint joint;
+    
+    private void Start()
+    {
+        line = GetComponent<LineRenderer>();
+    }
     void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            shootHook();
-           
+            if (SistemaMira.Instance.IsGrappable)
+            {
+                StartGrapple(SistemaMira.Instance.AimPoint);
+            }
+            else if (SistemaMira.Instance.AimRb != null)
+            {
+                Debug.Log("Atraer Rigidbody");
+            }
+
         }
         if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
             
-            Destroy(hook);
-            isDestroyed = true;
-        
+            Destroy(joint);
+            joint = null;
+            line.enabled = false;
         }
 
-        if (hook != null)
+        if (joint != null)
         {
-            Hook hookScript = hook.GetComponent<Hook>();
-
-            if (hookScript.isAttached)
-            {
-                
-                if (hookScript.isPlayer == false && hookScript.isGrapabble == true)
-                {
-                    float distance = Vector3.Distance(player.position, hook.transform.position);
-                    playerRb.useGravity = false;
-                    InHook.inHook(playerRb);
-                    if (distance > 2)
-                    {
-                        player.position = Vector3.MoveTowards(player.position, hook.transform.position, pullSpeed * Time.deltaTime);
-                    }
-                }
-                else 
-                {
-                    if (hookScript.grabbedRb != null)
-                    {
-                        float objetctMass = hookScript.grabbedRb.mass;
-                        float realPullSpeed = pullSpeed / Mathf.Max(0.1f, objetctMass);
-                        InHook.inHook(hookScript.grabbedRb);
-
-                        float distance = Vector3.Distance(hookScript.grabbedRb.transform.position, player.position);
-                        Vector3 puntoDeAgarre = transform.position + (transform.forward * 1f);
-
-                        if (distance > 2.2f)
-                        {
-                            hookScript.grabbedRb.transform.position = Vector3.MoveTowards(hookScript.grabbedRb.transform.position, puntoDeAgarre, realPullSpeed * Time.deltaTime);
-                            
-                        }
-                        else
-                        {
-                            hookScript.grabbedRb.transform.position = puntoDeAgarre;
-
-                        }
-                    }
-
-                }
-
-                
-                
-            }
-        }
-        if (isDestroyed)
-        {           
-            playerRb.useGravity = true;
-            isDestroyed = false;
+            line.SetPosition(0, transform.position);
+            line.SetPosition(1, joint.connectedAnchor);
         }
 
     }
-    void shootHook()
+   
+
+    void StartGrapple(Vector3 grapplePoint)
     {
-        if (hook != null)
-        {
-            Destroy(hook);
-        }
+        if (joint != null) return;
 
-        Vector3 direction = (SistemaMira.Instance.AimPoint - point.position).normalized;
+        joint = player.gameObject.AddComponent<SpringJoint>();
+        joint.autoConfigureConnectedAnchor = false;
+        joint.connectedAnchor = grapplePoint;
 
-        hook = Instantiate(hookPre, point.position,Quaternion.LookRotation(direction));
-        Rigidbody rb = hook.GetComponent<Rigidbody>();
-        if (rb != null) 
-        {
-            rb.AddForce(direction * speed, ForceMode.Impulse);
-        }
+        float distanceFrom = Vector3.Distance(player.position, grapplePoint);
+        joint.maxDistance = distanceFrom * 0.8f;
+        joint.minDistance = distanceFrom * 0.25f;
 
+        joint.spring = 50;
+        joint.damper = 14;
+        joint.massScale = 4;
+
+        line.positionCount = 2;
+        line.enabled = true;
+       
     }
 }
