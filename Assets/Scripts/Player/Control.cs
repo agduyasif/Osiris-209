@@ -15,26 +15,26 @@ public class Control
         vibration = _vibration;
     }
 
-    public void ArtificialUpdate()
+    public void ArtificialUpdate(bool hasControl)
     {
         Vector2 move = MoveControl.action.ReadValue<Vector2>();
 
         Vector3 dir = transform.forward * move.y;
         dir += transform.right * move.x;
 
-        movement.move(dir);
+        movement.move(dir, hasControl);
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             movement.jump();
         }
 
-        if (move.magnitude > 0.1f && vibration == true)
+        /*if (move.magnitude > 0.1f && vibration == true)
         {
             VibrationMeter.Instance.AddVibration(30f * Time.deltaTime);
             VibrationSystem.Instance.CreateVibration(transform.position, 10f);
 
-        }
+        }*/
     }
 
 }

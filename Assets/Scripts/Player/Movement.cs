@@ -16,17 +16,37 @@ public class Movement
         rb = _rb;
         anim = _anim;
     }
-    public void move(Vector3 dir)
+    public void move(Vector3 dir, bool hasControl)
     {
         bool grounded = IsGrounded();
         bool moving = dir.magnitude > 0.1f;
 
-        float force = grounded ? speed : speed * 0.15f;
-        rb.AddForce(dir * force, ForceMode.Acceleration);
+        Vector3 horizontalVel = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
 
         anim.SetBool("IsJumping", !grounded);
-        
+        bool highSpeed = horizontalVel.magnitude > speed * 2;
 
+        if (highSpeed && !hasControl)
+        {
+            anim.SetBool("IsJumping", !grounded);
+            anim.SetBool("IsWalking", false);
+            return;
+        }
+
+        if (grounded)
+        {
+            rb.linearVelocity = new Vector3(dir.x * speed, rb.linearVelocity.y, dir.z * speed);
+        }
+        else if (highSpeed && hasControl)
+        {
+            rb.AddForce(dir * speed * 0.7f, ForceMode.Acceleration);
+        }
+        else
+        {
+            rb.AddForce(dir * speed, ForceMode.Acceleration);
+        }
+
+        anim.SetBool("IsJumping", !grounded);
         if (grounded && moving)
         {
             anim.SetBool("IsWalking", true);

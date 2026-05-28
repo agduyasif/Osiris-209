@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     bool isBalancing = false;
     BalanceLogic balanceLogic = new BalanceLogic();
     [SerializeField] bool vibration = true;
-
+    public bool isGrappling = false;
     void Start()
     {
         Cursor.visible = false;
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     {
         if (!isBalancing)
         {
-            control.ArtificialUpdate();
+            control.ArtificialUpdate(!isGrappling);
             movement.CheckGroundedStatus();
         }
         else

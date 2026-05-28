@@ -10,11 +10,12 @@ public class Shoothook : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] Rigidbody playerRb;
     [SerializeField] float pullSpeed = 1f;
-
+    Player playerScript;
     SpringJoint joint;
     
     private void Start()
     {
+        playerScript = GetComponentInParent<Player>();
         line = GetComponent<LineRenderer>();
     }
     void Update()
@@ -27,7 +28,7 @@ public class Shoothook : MonoBehaviour
             }
             else if (SistemaMira.Instance.AimRb != null)
             {
-                Debug.Log("Atraer Rigidbody");
+                
             }
 
         }
@@ -37,6 +38,7 @@ public class Shoothook : MonoBehaviour
             Destroy(joint);
             joint = null;
             line.enabled = false;
+            playerScript.isGrappling = true;
         }
 
         if (joint != null)
@@ -60,12 +62,12 @@ public class Shoothook : MonoBehaviour
         joint.maxDistance = distanceFrom * 0.8f;
         joint.minDistance = distanceFrom * 0.25f;
 
-        joint.spring = 50;
-        joint.damper = 14;
-        joint.massScale = 4;
+        joint.spring = 10;
+        joint.damper = 10;
+        joint.massScale = 3;
 
         line.positionCount = 2;
         line.enabled = true;
-       
+        playerScript.isGrappling = true;
     }
 }
