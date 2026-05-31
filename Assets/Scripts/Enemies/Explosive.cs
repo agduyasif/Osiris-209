@@ -7,6 +7,11 @@ public class Explosive : MonoBehaviour
     Rigidbody rb;
     float force = 5;
     float expTime = 8;
+
+    [Header("Sonido")]
+    [SerializeField] private AudioClip explSound;
+    private bool hasExpl = false; 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -20,8 +25,17 @@ public class Explosive : MonoBehaviour
 
         if (time > expTime)
         {
+            if (!hasExpl)
+            {
+                if (explSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(explSound, transform.position);
+                }
+                hasExpl = true; 
+            }
+
             Collider[] objs = Physics.OverlapSphere(transform.position, 2);
-            
+
             expl.enabled = true;
 
             foreach (var item in objs)
@@ -29,22 +43,18 @@ public class Explosive : MonoBehaviour
                 if (item.TryGetComponent<Player>(out var player))
                 {
                     ResetScene.Reset();
-                }else if (item.TryGetComponent<Wall>(out var wall))
+                }
+                else if (item.TryGetComponent<Wall>(out var wall))
                 {
                     wall.destroyWall();
                 }
             }
             if (time > expTime + 1) { Destroy(gameObject); }
         }
-        
     }
-    
-    
-    
-    
-    
+
     private void OnDrawGizmosSelected()
-    {       
+    {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, 2);
     }

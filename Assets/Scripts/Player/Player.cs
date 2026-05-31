@@ -16,15 +16,21 @@ public class Player : MonoBehaviour
     public bool isGrappling = false;
     GrappleMove grappleMove;
 
+    [Header("Configuración de Sonido")]
+    [SerializeField] private AudioSource audioSourcePasos;
+    [SerializeField] private AudioClip sonidoPisada;
+    [SerializeField] private AudioClip sonidoSalto;
+
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
-        movement = new Movement(transform, speed, rb, animator);
+
+        // Pasamos el AudioSource y el AudioClip al constructor de Movement
+        movement = new Movement(transform, speed, rb, animator, audioSourcePasos, sonidoPisada, sonidoSalto);
         control = new Control(movecontrol, movement, transform, vibration);
         grappleMove = new GrappleMove(rb, control, 10);
-
     }
 
     private void Update()
@@ -57,6 +63,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Equilibrio"))
@@ -71,6 +78,7 @@ public class Player : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.identity;
         }
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
