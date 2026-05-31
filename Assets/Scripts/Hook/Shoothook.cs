@@ -12,7 +12,8 @@ public class Shoothook : MonoBehaviour
     [SerializeField] float pullSpeed = 1f;
     Player playerScript;
     SpringJoint joint;
-    
+    Rigidbody grabbedRb;
+
     private void Start()
     {
         playerScript = GetComponentInParent<Player>();
@@ -28,7 +29,7 @@ public class Shoothook : MonoBehaviour
             }
             else if (SistemaMira.Instance.AimRb != null)
             {
-                
+                grabbedRb = SistemaMira.Instance.AimRb;
             }
 
         }
@@ -39,7 +40,10 @@ public class Shoothook : MonoBehaviour
             joint = null;
             line.enabled = false;
             playerScript.isGrappling = true;
+            grabbedRb = null;
         }
+
+        pullRb();
 
         if (joint != null)
         {
@@ -70,4 +74,25 @@ public class Shoothook : MonoBehaviour
         line.enabled = true;
         playerScript.isGrappling = true;
     }
+
+    void pullRb()
+    {
+        if (grabbedRb != null)
+        {
+            pullSpeed = pullSpeed / Mathf.Max(0.1f, grabbedRb.mass);
+             
+            Vector3 puntoDeAgarre = transform.position + transform.forward * 1f;
+            float distance = Vector3.Distance(grabbedRb.transform.position, puntoDeAgarre);
+
+            if (distance > 3)
+            {
+                grabbedRb.transform.position = Vector3.MoveTowards(grabbedRb.transform.position, puntoDeAgarre, pullSpeed * Time.deltaTime);
+            }
+            else
+            {
+                grabbedRb.transform.position = puntoDeAgarre;
+            }
+        }
+    }
+
 }

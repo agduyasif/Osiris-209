@@ -19,8 +19,7 @@ public class Control
     {
         Vector2 move = MoveControl.action.ReadValue<Vector2>();
 
-        Vector3 dir = transform.forward * move.y;
-        dir += transform.right * move.x;
+        Vector3 dir = getDir();
 
         movement.move(dir, hasControl);
 
@@ -35,6 +34,14 @@ public class Control
             VibrationSystem.Instance.CreateVibration(transform.position, 10f);
 
         }*/
+    }
+
+    public Vector3 getDir()
+    {
+        Vector2 move = MoveControl.action.ReadValue<Vector2>();
+        Vector3 dir = transform.forward * move.y;
+        dir += transform.right * move.x;
+        return dir;
     }
 
 }

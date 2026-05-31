@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     BalanceLogic balanceLogic = new BalanceLogic();
     [SerializeField] bool vibration = true;
     public bool isGrappling = false;
+    GrappleMove grappleMove;
+
     void Start()
     {
         Cursor.visible = false;
@@ -21,6 +23,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         movement = new Movement(transform, speed, rb, animator);
         control = new Control(movecontrol, movement, transform, vibration);
+        grappleMove = new GrappleMove(rb, control, 10);
 
     }
 
@@ -30,6 +33,10 @@ public class Player : MonoBehaviour
         {
             control.ArtificialUpdate(!isGrappling);
             movement.CheckGroundedStatus();
+        }
+        else if (isGrappling)
+        {
+            grappleMove.Push();
         }
         else
         {
