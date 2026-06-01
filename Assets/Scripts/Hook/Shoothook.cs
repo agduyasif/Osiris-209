@@ -84,6 +84,8 @@ public class Shoothook : MonoBehaviour
             Vector3 puntoDeAgarre = transform.position + transform.forward * 1f;
             float distance = Vector3.Distance(grabbedRb.transform.position, puntoDeAgarre);
 
+            InHook.inHook(grabbedRb);
+
             if (distance > 3)
             {
                 grabbedRb.transform.position = Vector3.MoveTowards(grabbedRb.transform.position, puntoDeAgarre, pullSpeed * Time.deltaTime);
