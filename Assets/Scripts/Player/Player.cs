@@ -17,9 +17,9 @@ public class Player : MonoBehaviour
     GrappleMove grappleMove;
 
     [Header("Configuración de Sonido")]
-    [SerializeField] private AudioSource audioSourcePasos;
-    [SerializeField] private AudioClip sonidoPisada;
-    [SerializeField] private AudioClip sonidoSalto;
+    [SerializeField] private AudioSource aS;
+    [SerializeField] private AudioClip walkSound;
+    [SerializeField] private AudioClip jumpSound;
 
     void Start()
     {
@@ -27,8 +27,7 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
 
-        // Pasamos el AudioSource y el AudioClip al constructor de Movement
-        movement = new Movement(transform, speed, rb, animator, audioSourcePasos, sonidoPisada, sonidoSalto);
+        movement = new Movement(transform, speed, rb, animator, aS, walkSound, jumpSound);
         control = new Control(movecontrol, movement, transform, vibration);
         grappleMove = new GrappleMove(rb, control, 10);
     }

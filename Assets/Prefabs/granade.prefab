@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expl: {fileID: 4222865895716962315}
+  explSound: {fileID: 8300000, guid: 3b74c29c6e220094aabe35672fd13a13, type: 3}
 --- !u!54 &1688750624963754894
 Rigidbody:
   m_ObjectHideFlags: 0

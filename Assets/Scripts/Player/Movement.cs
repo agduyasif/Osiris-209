@@ -9,29 +9,30 @@ public class Movement
     float speed = 5;
     Animator anim;
     AudioSource audioSource;
-    AudioClip sonidoCamina;
-    AudioClip sonidoSalto;
+    AudioClip walkSound;
+    AudioClip jumpSound;
+    
 
     public Movement(Transform _transform, float _speed, Rigidbody _rb, Animator _anim, 
-        AudioSource _audioSource, AudioClip _sonidoCamina, AudioClip sonidoSalto)
+        AudioSource _audioSource, AudioClip _walkSound, AudioClip _jumpSound)
     {
         transform = _transform;
         speed = _speed;
         rb = _rb;
         anim = _anim;
         audioSource = _audioSource;
-        sonidoCamina = _sonidoCamina;
+        walkSound = _walkSound;
+        jumpSound = _jumpSound;
 
-        if (audioSource != null && sonidoCamina != null)
+        if (audioSource != null && walkSound != null)
         {
-            audioSource.clip = sonidoCamina;
+            audioSource.clip = walkSound;
             audioSource.loop = true;
         }
-
-        this.sonidoSalto = sonidoSalto;
+ 
     }
 
-   private void WalkSoundControl(bool reproducir)
+    private void WalkSoundControl(bool reproducir)
     {
         if (audioSource == null) return;
 
@@ -105,7 +106,7 @@ public class Movement
             rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
             anim.SetBool("IsJumping", true);
             WalkSoundControl(false);
-            audioSource.PlayOneShot(sonidoSalto);
+            audioSource.PlayOneShot(jumpSound);
         }
     }
 

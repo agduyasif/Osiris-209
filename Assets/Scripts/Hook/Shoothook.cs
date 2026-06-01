@@ -13,6 +13,8 @@ public class Shoothook : MonoBehaviour
     Player playerScript;
     SpringJoint joint;
     Rigidbody grabbedRb;
+    [SerializeField] AudioSource As;
+    [SerializeField] AudioClip grappleSound;
 
     private void Start()
     {
@@ -26,6 +28,7 @@ public class Shoothook : MonoBehaviour
             if (SistemaMira.Instance.IsGrappable)
             {
                 StartGrapple(SistemaMira.Instance.AimPoint);
+                As.PlayOneShot(grappleSound);
             }
             else if (SistemaMira.Instance.AimRb != null)
             {
