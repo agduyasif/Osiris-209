@@ -48,7 +48,7 @@ public class Movement
         Vector3 horizontalVel = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
 
         anim.SetBool("IsJumping", !grounded);
-        bool highSpeed = horizontalVel.magnitude > speed;
+        bool highSpeed = horizontalVel.magnitude > speed * speed;
 
         if (highSpeed && !hasControl)
         {
@@ -65,12 +65,6 @@ public class Movement
         else
         {
             rb.AddForce(dir * speed, ForceMode.Acceleration);
-
-            if (horizontalVel.magnitude > speed)
-            {
-                Vector3 limited = horizontalVel.normalized * speed;
-                rb.linearVelocity = new Vector3(limited.x, rb.linearVelocity.y, limited.z);
-            }
         }
 
         anim.SetBool("IsJumping", !grounded);

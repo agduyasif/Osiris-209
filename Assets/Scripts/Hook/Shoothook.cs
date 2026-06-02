@@ -42,7 +42,7 @@ public class Shoothook : MonoBehaviour
             Destroy(joint);
             joint = null;
             line.enabled = false;
-            playerScript.isGrappling = false;
+            playerScript.isGrappling = true;
             grabbedRb = null;
         }
 
@@ -76,7 +76,6 @@ public class Shoothook : MonoBehaviour
         line.positionCount = 2;
         line.enabled = true;
         playerScript.isGrappling = true;
-        playerScript.grappleMove.setAnchor(grapplePoint);
     }
 
     void pullRb()
