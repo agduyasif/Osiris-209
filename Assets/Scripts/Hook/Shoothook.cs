@@ -20,6 +20,7 @@ public class Shoothook : MonoBehaviour
     {
         playerScript = GetComponentInParent<Player>();
         line = GetComponent<LineRenderer>();
+        
     }
     void Update()
     {
@@ -34,13 +35,9 @@ public class Shoothook : MonoBehaviour
                 grabbedRb = SistemaMira.Instance.AimRb;
             }
         }
-        if (Mouse.current.leftButton.wasReleasedThisFrame)
+        else if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
-            Destroy(joint);
-            joint = null;
-            line.enabled = false;
-            playerScript.isGrappling = false;
-            grabbedRb = null;
+            Release();
         }
         if (joint != null)
         {
@@ -110,5 +107,16 @@ public class Shoothook : MonoBehaviour
             }
         }
     }
+
+
+    public void Release()
+    {
+        Destroy(joint);
+        joint = null;
+        line.enabled = false;
+        playerScript.isGrappling = false;
+        grabbedRb = null;
+    }
+
 
 }

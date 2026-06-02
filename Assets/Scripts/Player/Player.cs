@@ -29,13 +29,14 @@ public class Player : MonoBehaviour
 
         movement = new Movement(transform, speed, rb, animator, aS, walkSound, jumpSound);
         control = new Control(movecontrol, movement, transform, vibration);
-        grappleMove = new GrappleMove(rb, control, 0.2f);
+        grappleMove = new GrappleMove(rb, control, 0.2f, playerCamera.transform);
+        grappleMove.SetShoothook(GetComponentInChildren<Shoothook>());
     }
 
     private void Update()
     {
          if (isBalancing)
-        {
+         {
             Vector2 input = movecontrol.action.ReadValue<Vector2>();
             balanceLogic.UpdateLogic(input.x);
             Vector3 dirAdelante = transform.forward * input.y;
@@ -47,7 +48,7 @@ public class Player : MonoBehaviour
                 isBalancing = false;
                 ResetScene.Reset();
             }
-        }
+         }
         else if (isGrappling)
         {
             if (movement.IsGrounded())
@@ -58,6 +59,10 @@ public class Player : MonoBehaviour
             else
             {
                 grappleMove.Push();
+                if (Keyboard.current.spaceKey.wasPressedThisFrame)
+                {
+                    grappleMove.Jump();
+                }
             }
         }
         else
