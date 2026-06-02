@@ -17,8 +17,6 @@ public class Control
 
     public void ArtificialUpdate(bool hasControl)
     {
-        Vector2 move = MoveControl.action.ReadValue<Vector2>();
-
         Vector3 dir = getDir();
 
         movement.move(dir, hasControl);

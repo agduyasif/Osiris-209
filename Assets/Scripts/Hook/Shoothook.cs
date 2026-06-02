@@ -28,34 +28,40 @@ public class Shoothook : MonoBehaviour
             if (SistemaMira.Instance.IsGrappable)
             {
                 StartGrapple(SistemaMira.Instance.AimPoint);
-                As.PlayOneShot(grappleSound);
             }
             else if (SistemaMira.Instance.AimRb != null)
             {
                 grabbedRb = SistemaMira.Instance.AimRb;
             }
-
         }
         if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
-            
             Destroy(joint);
             joint = null;
             line.enabled = false;
-            playerScript.isGrappling = true;
+            playerScript.isGrappling = false;
             grabbedRb = null;
         }
-
-        pullRb();
-
         if (joint != null)
         {
             line.SetPosition(0, transform.position);
             line.SetPosition(1, joint.connectedAnchor);
         }
-
+        if (grabbedRb != null)
+        {
+            float realPullSpeed = pullSpeed / Mathf.Max(0.1f, grabbedRb.mass);
+            Vector3 puntoDeAgarre = transform.position + transform.forward * 1f;
+            float distance = Vector3.Distance(grabbedRb.transform.position, puntoDeAgarre);
+            if (distance > 2.2f)
+            {
+                grabbedRb.transform.position = Vector3.MoveTowards(grabbedRb.transform.position, puntoDeAgarre, realPullSpeed * Time.deltaTime);
+            }
+            else
+            {
+                grabbedRb.transform.position = puntoDeAgarre;
+            }
+        }
     }
-   
 
     void StartGrapple(Vector3 grapplePoint)
     {
@@ -66,6 +72,7 @@ public class Shoothook : MonoBehaviour
         joint.connectedAnchor = grapplePoint;
 
         float distanceFrom = Vector3.Distance(player.position, grapplePoint);
+
         joint.maxDistance = distanceFrom * 0.8f;
         joint.minDistance = distanceFrom * 0.25f;
 
@@ -75,7 +82,11 @@ public class Shoothook : MonoBehaviour
 
         line.positionCount = 2;
         line.enabled = true;
+
         playerScript.isGrappling = true;
+        playerScript.grappleMove.setAnchor(grapplePoint);
+
+        As.PlayOneShot(grappleSound);
     }
 
     void pullRb()

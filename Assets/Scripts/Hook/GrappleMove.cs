@@ -2,19 +2,34 @@ using UnityEngine;
 
 public class GrappleMove
 {
-    Rigidbody rb;
-    float pushForce;
-    Control control;
-    public GrappleMove(Rigidbody _rb, Control _control, float _pushForce)
-    {
-        rb = _rb;
-        control = _control;
-        pushForce = _pushForce;
-    }
+    
+        Rigidbody rb;
+        float pushForce;
+        Control control;
+        Vector3 anchorPointo;
 
-    public void Push()
-    {
-        Vector3 dir = control.getDir();
-        rb.AddForce(dir * pushForce, ForceMode.Acceleration);
-    }
+        public GrappleMove(Rigidbody _rb, Control _control, float _pushForce)
+        {
+            rb = _rb;
+            control = _control;
+            pushForce = _pushForce;
+        }
+
+        public void Push()
+        {
+            Vector3 dir = control.getDir();
+            Vector3 ropeDir = (rb.position - anchorPointo).normalized;
+            Vector3 tangentelDir = (dir - Vector3.Project(dir, ropeDir)).normalized;
+            Vector3 tangentialVel = rb.linearVelocity - Vector3.Project(rb.linearVelocity, ropeDir);
+            float currentSwingSpeed = tangentialVel.magnitude;
+            float scaledForce = pushForce * Mathf.Max(currentSwingSpeed, 1f);
+            if (currentSwingSpeed > 15f) return;
+            rb.AddForce(tangentelDir * scaledForce, ForceMode.Acceleration);
+        }
+
+        public void setAnchor(Vector3 point)
+        {
+            anchorPointo = point;
+        }
+    
 }
