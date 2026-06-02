@@ -7,6 +7,10 @@ public class MenuPrincipal : MonoBehaviour
     {
         SceneManager.LoadScene("Nivel Prototipo");
     }
+    public void IrAControles()
+    {
+        SceneManager.LoadScene("Controls");
+    }
 
     public void Salir()
     {
