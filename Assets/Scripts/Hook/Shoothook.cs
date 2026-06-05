@@ -80,20 +80,17 @@ public class Shoothook : MonoBehaviour
     {
         if (grabbedRb != null)
         {
-            pullSpeed = pullSpeed / Mathf.Max(0.1f, grabbedRb.mass);
-             
+            float realPullSpeed = pullSpeed / Mathf.Max(0.1f, grabbedRb.mass);
             Vector3 puntoDeAgarre = transform.position + transform.forward * 1f;
+
             float distance = Vector3.Distance(grabbedRb.transform.position, puntoDeAgarre);
 
-            
-
-            if (distance > 3)
+            if (distance > 3f)
             {
-                grabbedRb.transform.position = Vector3.MoveTowards(grabbedRb.transform.position, puntoDeAgarre, pullSpeed * Time.deltaTime);
+                grabbedRb.transform.position = Vector3.MoveTowards(grabbedRb.transform.position, puntoDeAgarre, realPullSpeed * Time.deltaTime);
             }
             else
             {
-                InHook.inHook(grabbedRb);
                 grabbedRb.transform.position = puntoDeAgarre;
             }
         }
@@ -109,5 +106,17 @@ public class Shoothook : MonoBehaviour
         grabbedRb = null;
     }
 
-
+    void xd() {
+        float realPullSpeed = pullSpeed / Mathf.Max(0.1f, grabbedRb.mass);
+        Vector3 puntoDeAgarre = transform.position + transform.forward * 1f;
+        float distance = Vector3.Distance(grabbedRb.transform.position, puntoDeAgarre);
+        if (distance > 2.2f)
+        {
+            grabbedRb.transform.position = Vector3.MoveTowards(grabbedRb.transform.position, puntoDeAgarre, realPullSpeed * Time.deltaTime);
+        }
+        else
+        {
+            grabbedRb.transform.position = puntoDeAgarre;
+        }
+    }
 }
