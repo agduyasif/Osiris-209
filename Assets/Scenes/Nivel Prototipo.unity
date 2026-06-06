@@ -28973,6 +28973,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5406047554613873215, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 098375bca40990345a4840402d4fb079, type: 2}
+    - target: {fileID: 5406047554613873215, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 098375bca40990345a4840402d4fb079, type: 2}
+    - target: {fileID: 5406047554613873215, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 098375bca40990345a4840402d4fb079, type: 2}
     - target: {fileID: 8330409615440030662, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
       propertyPath: CanGrab
       value: 
