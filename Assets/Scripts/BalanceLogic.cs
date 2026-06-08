@@ -3,7 +3,7 @@ using UnityEngine;
 public class BalanceLogic
 {
     public float balanceHandle = 0f; 
-    float fallSpeed = 0.5f; // 
+    float fallSpeed = 0.7f; 
     float recoverySpeed = 1.5f;
 
     public void TubeMove(Vector3 direccion, float speed, Rigidbody rb)

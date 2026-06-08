@@ -2405,6 +2405,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!20 &84825870 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 101171461798126285, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
+  m_PrefabInstance: {fileID: 1186286003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &90050529
 Mesh:
   m_ObjectHideFlags: 0
@@ -14470,6 +14475,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &726726652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1780800325025940999, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
+  m_PrefabInstance: {fileID: 1186286003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &749815116
 Mesh:
   m_ObjectHideFlags: 0
@@ -27629,7 +27639,7 @@ Transform:
   m_GameObject: {fileID: 1137467086}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -141.72688, y: 106.62098, z: 366.7}
+  m_LocalPosition: {x: -141.72688, y: 108, z: 366.7}
   m_LocalScale: {x: 6.865714, y: 1, z: 10.704661}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29000,7 +29010,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1780800325025940999, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1188803202}
   m_SourcePrefab: {fileID: 100100000, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
 --- !u!43 &1188627283
 Mesh:
@@ -29172,6 +29185,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1487289236175403312, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
   m_PrefabInstance: {fileID: 1186286003}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1188803202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726726652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82fdad7a2eb8f94f936d9e4fd344d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movecontrol: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  playerCamera: {fileID: 84825870}
+  speed: 5
 --- !u!1001 &1193261031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39950,6 +39978,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2109043469}
+    - target: {fileID: 6298724296206692452, guid: cc221b54e20ad044a90dd5e23a7443a7, type: 3}
+      propertyPath: m_VersionIndex
+      value: 553
+      objectReference: {fileID: 0}
     - target: {fileID: 6676129939600032982, guid: cc221b54e20ad044a90dd5e23a7443a7, type: 3}
       propertyPath: m_Mesh
       value: 
