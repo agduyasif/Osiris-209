@@ -19,7 +19,7 @@ public class Shoothook : MonoBehaviour
     private void Start()
     {
         playerScript = GetComponentInParent<Player>();
-        line = GetComponent<LineRenderer>();
+        line = GetRequired<LineRenderer>(gameObject);
         
     }
     void Update()
@@ -84,6 +84,7 @@ public class Shoothook : MonoBehaviour
             Vector3 puntoDeAgarre = transform.position + transform.forward * 1f;
 
             float distance = Vector3.Distance(grabbedRb.transform.position, puntoDeAgarre);
+            InHook.inHook(grabbedRb);
 
             if (distance > 3f)
             {
@@ -106,17 +107,10 @@ public class Shoothook : MonoBehaviour
         grabbedRb = null;
     }
 
-    void xd() {
-        float realPullSpeed = pullSpeed / Mathf.Max(0.1f, grabbedRb.mass);
-        Vector3 puntoDeAgarre = transform.position + transform.forward * 1f;
-        float distance = Vector3.Distance(grabbedRb.transform.position, puntoDeAgarre);
-        if (distance > 2.2f)
-        {
-            grabbedRb.transform.position = Vector3.MoveTowards(grabbedRb.transform.position, puntoDeAgarre, realPullSpeed * Time.deltaTime);
-        }
-        else
-        {
-            grabbedRb.transform.position = puntoDeAgarre;
-        }
+    T GetRequired<T>(GameObject obj) where T : Component
+    {
+        T comp = obj.GetComponent<T>();
+        if (comp == null) Debug.LogError($"Falta {typeof(T).Name} en {obj.name}");
+        return comp;
     }
 }

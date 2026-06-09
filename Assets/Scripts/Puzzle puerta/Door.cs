@@ -1,15 +1,28 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Door : MonoBehaviour
 {
     public float openHeight = 5f;
     [SerializeField] float smooth = 0.4f;
-    
+    [SerializeField] Weight platform;
 
     Vector3 closedPos;
     Vector3 openPos;
     Vector3 target;
     Vector3 velocity;
+
+    private void OnEnable()
+    {
+        platform.OnActivated += open;
+        platform.OnDeactivated += close;
+    }
+
+    private void OnDisable()
+    {
+        platform.OnActivated -= open;
+        platform.OnDeactivated -= close;
+    }
 
     void Start()
     {

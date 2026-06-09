@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 public class Weight : MonoBehaviour
 {
     private List<Rigidbody> inPlaform = new List<Rigidbody>();
@@ -15,6 +16,10 @@ public class Weight : MonoBehaviour
     Vector3 restPos;
     Vector3 pressedPos;
     Vector3 velocity;
+
+    public event Action OnActivated;
+    public event Action OnDeactivated;
+
     private void Awake()
     {
         restPos = platform.position;
@@ -70,7 +75,7 @@ public class Weight : MonoBehaviour
     {
         bool active = totalMass >= weightRequiered;
 
-        if (active && !isActive) { door.open(); isActive = true; }
-        else if (!active && isActive) {  door.close(); isActive = false; }
+        if (active && !isActive) { OnActivated?.Invoke(); isActive = true; }
+        else if (!active && isActive) {  OnDeactivated?.Invoke(); isActive = false; }
     }
 }
