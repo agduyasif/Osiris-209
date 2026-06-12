@@ -15,6 +15,8 @@ public class Shoothook : MonoBehaviour
     Rigidbody grabbedRb;
     [SerializeField] AudioSource As;
     [SerializeField] AudioClip grappleSound;
+    [SerializeField] GameObject particulas;
+
 
     private void Start()
     {
@@ -43,6 +45,15 @@ public class Shoothook : MonoBehaviour
         {
             line.SetPosition(0, transform.position);
             line.SetPosition(1, joint.connectedAnchor);
+            if (playerScript.IsGrounded())
+            {
+                float currentDistance = Vector3.Distance(player.position, joint.connectedAnchor);
+
+                if (joint.maxDistance > currentDistance) 
+                {
+                    joint.maxDistance = currentDistance * 0.9f;
+                }
+            }
         }
         if (grabbedRb != null)
         {
@@ -60,11 +71,11 @@ public class Shoothook : MonoBehaviour
 
         float distanceFrom = Vector3.Distance(player.position, grapplePoint);
 
-        joint.maxDistance = distanceFrom * 0.8f;
+        joint.maxDistance = distanceFrom;
         joint.minDistance = distanceFrom * 0.25f;
 
-        joint.spring = 10;
-        joint.damper = 10;
+        joint.spring = 18;
+        joint.damper = 12;
         joint.massScale = 3;
 
         line.positionCount = 2;
@@ -73,9 +84,17 @@ public class Shoothook : MonoBehaviour
         playerScript.isGrappling = true;
         playerScript.grappleMove.setAnchor(grapplePoint);
 
+        particlehit(grapplePoint);
         As.PlayOneShot(grappleSound);
     }
 
+    void particlehit(Vector3 grapplePoint)
+    {
+        GameObject p = Instantiate(particulas, grapplePoint, Quaternion.identity);
+        var ps = p.GetComponent<ParticleSystem>();
+        var main = ps.main;
+        main.startColor = SistemaMira.Instance.AimColor;
+    }
     void pullRb()
     {
         if (grabbedRb != null)

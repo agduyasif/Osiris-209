@@ -18,6 +18,7 @@ public class SistemaMira : MonoBehaviour
     public Vector3 AimPoint {  get; private set; }
     public Rigidbody AimRb { get; private set; }
     public bool IsGrappable { get; private set; }
+    public Color AimColor { get; private set; }
 
     private void Awake()
     {
@@ -31,6 +32,11 @@ public class SistemaMira : MonoBehaviour
         if (Physics.Raycast(rayo, out RaycastHit hit, 100))
         {
             AimPoint = hit.point;
+            Renderer rend = hit.collider.GetComponent<Renderer>();
+            if (rend != null) 
+            {
+                AimColor = rend.sharedMaterial.color;
+            }
 
             if (hit.collider.gameObject.layer == 7)
             {

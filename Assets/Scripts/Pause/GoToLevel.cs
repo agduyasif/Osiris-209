@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GoToLevel : MonoBehaviour
 {
-    [SerializeField] Scene level;
+    [SerializeField] string level;
 
 
 

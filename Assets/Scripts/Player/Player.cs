@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip walkSound;
     [SerializeField] private AudioClip jumpSound;
 
+    public bool IsGrounded() => movement.IsGrounded();
+
     void Start()
     {
         Cursor.visible = false;
