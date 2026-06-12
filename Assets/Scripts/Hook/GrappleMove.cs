@@ -9,7 +9,7 @@ public class GrappleMove
     Vector3 anchorPointo;
     float currentSwingSpeed;
     Transform cam;
-    float baseJump = 5;
+    float baseJump = 0f;
     Shoothook shoothook;
 
 
@@ -43,7 +43,7 @@ public class GrappleMove
         float jumpForce = baseJump + currentSwingSpeed;
         shoothook.Release();
 
-        Vector3 jumpDir = (cam.forward + Vector3.up * 0.3f).normalized;
+        Vector3 jumpDir = (rb.linearVelocity.normalized + Vector3.up * 0.3f).normalized;
         rb.AddForce(jumpDir * jumpForce, ForceMode.Impulse);
     }
    
