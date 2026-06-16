@@ -28894,6 +28894,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1335226702032169154, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
+      propertyPath: crouchCameraHeight
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335226702032169154, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
+      propertyPath: crouchColliderSizeY
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335226702032169154, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
+      propertyPath: standingCameraHeight
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335226702032169154, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
+      propertyPath: cameraTransitionSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1487289236175403312, guid: 83b50bad32001ce46bb4a117d341b6f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.44

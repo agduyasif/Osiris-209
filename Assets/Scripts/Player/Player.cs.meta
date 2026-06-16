@@ -1,2 +1,17 @@
 fileFormatVersion: 2
 guid: a58a1e9ec3d460f4b99de48aa7374d3e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - animator: {instanceID: 0}
+  - playerCamera: {instanceID: 0}
+  - movecontrol: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  - aS: {instanceID: 0}
+  - walkSound: {instanceID: 0}
+  - jumpSound: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
