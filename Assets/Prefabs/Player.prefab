@@ -121,15 +121,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6330205152931385787}
+  playerCamera: {fileID: 101171461798126285}
+  movecontrol: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   speed: 7
   crouchSpeed: 2.5
-  movecontrol: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  playerCamera: {fileID: 101171461798126285}
   vibration: 1
   isGrappling: 0
   aS: {fileID: 3223553430446856457}
   walkSound: {fileID: 8300000, guid: a961d5c7807267d4ba1ea7483c14ad1f, type: 3}
   jumpSound: {fileID: 8300000, guid: 14602ed9894a5574f9ae993d013a34a5, type: 3}
+  cameraTransitionSpeed: 2
+  standingCameraHeight: 1.6
+  crouchCameraHeight: 0.9
+  crouchColliderSizeY: 1.7
 --- !u!54 &3743018663826938208
 Rigidbody:
   m_ObjectHideFlags: 0
