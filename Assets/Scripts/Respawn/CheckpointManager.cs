@@ -21,6 +21,15 @@ public class CheckpointManager : MonoBehaviour
     private void Start()
     {
         player.position = checkpoints[currentIndex].transform.position;
+        player.forward = checkpoints[currentIndex].transform.forward;
+
+        for (int i = 0; i <= currentIndex; i++)
+        {
+            if(checkpoints.Length > i)
+            {
+                checkpoints[i].LoadCheckpoint();
+            }
+        }
     }
 
     public void passCheck(int newIndex)
