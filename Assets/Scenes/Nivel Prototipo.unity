@@ -40656,7 +40656,6 @@ GameObject:
   - component: {fileID: 1838000883}
   - component: {fileID: 1838000882}
   - component: {fileID: 1838000881}
-  - component: {fileID: 1838000880}
   - component: {fileID: 1838000879}
   m_Layer: 0
   m_Name: reset (3)
@@ -40678,18 +40677,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: Nivel Cueva
---- !u!114 &1838000880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838000878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b8037bea380ab34e8da4c58ad4dd089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1838000881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49189,6 +49176,7 @@ GameObject:
   - component: {fileID: 3729591720274950344}
   - component: {fileID: 1951471187210781058}
   - component: {fileID: 3040139297810867478}
+  - component: {fileID: 5581090883361041396}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -49196,6 +49184,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5581090883361041396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5581090883361041395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521d2b259d72fd0409d10f792e415868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5788487706446865138
 Transform:
   m_ObjectHideFlags: 0
