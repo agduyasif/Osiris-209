@@ -63,5 +63,11 @@ public class Control
 
         return dir;
     }
+
+    public Vector2 GetInput()
+    {
+        return MoveControl.action.ReadValue<Vector2>();
+    }
+
     #endregion
 }

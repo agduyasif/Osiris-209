@@ -7,6 +7,10 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private BoxCollider col;
     private BalancePlayer PB;
+    public System.Action Move;
+
+    SwimMove swimMove;
+    public bool isSwimming = false;
 
     private Movement movement;
     private Control control;
@@ -57,6 +61,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         PB = GetComponent<BalancePlayer>();
         col = GetComponent<BoxCollider>();
+        Move = MovimientoNormal;
 
         // Captura de datos iniciales
         if (playerCamera != null) standingCameraHeight = playerCamera.transform.localPosition.y;
@@ -65,11 +70,11 @@ public class Player : MonoBehaviour
             standingColliderSizeY = col.size.y;
             standingColliderCenterY = col.center.y;
         }
-
         // Instancias de clases de control
         movement = new Movement(transform, speed, crouchSpeed, rb, animator, aS, walkSound, jumpSound);
         control = new Control(movecontrol, movement, transform, vibration);
         grappleMove = new GrappleMove(rb, control, 0.2f, playerCamera.transform);
+        swimMove = new SwimMove(rb, playerCamera.transform, control);
         grappleMove.SetShoothook(GetComponentInChildren<Shoothook>());
     }
 
@@ -82,15 +87,8 @@ public class Player : MonoBehaviour
         }
 
         // Manejo de estados: Grappling vs Movimiento Normal
-        if (isGrappling)
-        {
-            ManejarLogicaGrappling();
-        }
-        else
-        {
-            ManejarLogicaNormal();
-        }
-
+        
+        Move?.Invoke(); 
         // Procesar transición de altura
         CrouchingHeight();
     }
@@ -121,10 +119,26 @@ public class Player : MonoBehaviour
         }
     }
 
+  
+
+
+    private void MovimientoNormal()
+    {
+        if (isGrappling)
+            ManejarLogicaGrappling();   
+        else
+            ManejarLogicaNormal();      
+    }
+
     private void ManejarLogicaNormal()
     {
         control.ArtificialUpdate(!isGrappling);
         movement.CheckGroundedStatus();
+    }
+
+    public void ManejarLogicaSwim()
+    {
+        swimMove.Swim();
     }
 
     private void CrouchingHeight()
