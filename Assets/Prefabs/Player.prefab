@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58a1e9ec3d460f4b99de48aa7374d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSwimming: 0
   animator: {fileID: 6330205152931385787}
   playerCamera: {fileID: 101171461798126285}
   movecontrol: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -428,6 +429,7 @@ MonoBehaviour:
   pullSpeed: 13.67
   As: {fileID: 809376892443580591}
   grappleSound: {fileID: 8300000, guid: fe5b17aebc2457e45ace6e59709e5d59, type: 3}
+  soundController: {fileID: 0}
   particulas: {fileID: 969913377888910789, guid: cd87c452183cfaa4ea6293ea5b267165, type: 3}
 --- !u!120 &1355322285612578473
 LineRenderer:
@@ -549,13 +551,13 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 120
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

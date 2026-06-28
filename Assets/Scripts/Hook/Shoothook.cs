@@ -5,20 +5,27 @@ using UnityEngine.InputSystem;
 
 public class Shoothook : MonoBehaviour
 {
-
+    [Header("Referencias de Componentes")]
     LineRenderer line;
-
-    [SerializeField] Transform player;
-    [SerializeField] Rigidbody playerRb;
-    [SerializeField] float pullSpeed = 1f;
     Player playerScript;
     SpringJoint joint;
     Rigidbody grabbedRb;
+
+    [Header("Configuración del Jugador")]
+    [SerializeField] Transform player;
+    [SerializeField] Rigidbody playerRb;
+    [SerializeField] float pullSpeed = 1f;
+
+    [Header("Sistema de Audio")]
     [SerializeField] AudioSource As;
     [SerializeField] AudioClip grappleSound;
-    [SerializeField] GameObject particulas;
-    bool modoDirecto = false;
+    [SerializeField] SoundController soundController;
 
+    [Header("Efectos Visuales")]
+    [SerializeField] GameObject particulas;
+
+    [Header("Estados del Gancho")]
+    bool modoDirecto = false;
     bool yendoDirecto = false;
     Vector3 puntoDirecto;
 
@@ -27,7 +34,6 @@ public class Shoothook : MonoBehaviour
         PowerUp.OnCharge += ActivarModoDirecto;
         PowerUp.OffCharge += DesactivarModoDirecto;
     }
-
     private void OnDisable()
     {
         PowerUp.OnCharge -= ActivarModoDirecto;
@@ -61,6 +67,8 @@ public class Shoothook : MonoBehaviour
         {
             Release();
         }
+
+        // Lógica de actualización física y de línea
         if (joint != null)
         {
             line.SetPosition(0, transform.position);
@@ -68,20 +76,19 @@ public class Shoothook : MonoBehaviour
             if (playerScript.IsGrounded())
             {
                 float currentDistance = Vector3.Distance(player.position, joint.connectedAnchor);
-
-                if (joint.maxDistance > currentDistance) 
+                if (joint.maxDistance > currentDistance)
                 {
                     joint.maxDistance = currentDistance * 0.9f;
                 }
             }
         }
+
         if (grabbedRb != null)
         {
- 
             pullRb();
         }
-        directo();
 
+        directo();
     }
 
     void StartGrapple(Vector3 grapplePoint)
@@ -93,7 +100,6 @@ public class Shoothook : MonoBehaviour
         joint.connectedAnchor = grapplePoint;
 
         float distanceFrom = Vector3.Distance(player.position, grapplePoint);
-
         joint.maxDistance = distanceFrom;
         joint.minDistance = distanceFrom * 0.25f;
 
@@ -108,7 +114,50 @@ public class Shoothook : MonoBehaviour
         playerScript.grappleMove.setAnchor(grapplePoint);
 
         particlehit(grapplePoint);
-        As.PlayOneShot(grappleSound);
+
+        // --- LÓGICA DE SONIDO  ---
+        SoundIMP(SistemaMira.Instance.AimRb != null ? SistemaMira.Instance.AimRb.gameObject : null);
+    }
+
+    void checkWeight()
+    {
+        Rigidbody rb = SistemaMira.Instance.AimRb;
+        // --- REPRODUCIR SONIDO ANTES DEL RETURN ---
+        SoundIMP(rb.gameObject);
+
+        if (rb.mass >= 20)
+        {
+            Buttom boton = rb.GetComponent<Buttom>();
+            if (boton != null)
+            {
+                boton.Press();
+            }
+            return;
+        }
+        else
+        {
+            grabbedRb = rb;
+        }
+    }
+
+    // Función auxiliar para centralizar la reproducción de audios por superficie
+    void SoundIMP(GameObject obj)
+    {
+        AudioClip clipDinamico = null;
+
+        if (soundController != null && obj != null)
+        {
+            clipDinamico = soundController.IMP_Sound(obj);
+        }
+
+        if (clipDinamico != null)
+        {
+            As.PlayOneShot(clipDinamico);
+        }
+        else
+        {
+            As.PlayOneShot(grappleSound);
+        }
     }
 
     void particlehit(Vector3 grapplePoint)
@@ -118,6 +167,7 @@ public class Shoothook : MonoBehaviour
         var main = ps.main;
         main.startColor = SistemaMira.Instance.AimColor;
     }
+
     void pullRb()
     {
         if (grabbedRb != null)
@@ -128,7 +178,6 @@ public class Shoothook : MonoBehaviour
             float distance = Vector3.Distance(grabbedRb.transform.position, puntoDeAgarre);
             InHook.inHook(grabbedRb);
 
-            
             if (distance > 3f)
             {
                 grabbedRb.transform.position = Vector3.MoveTowards(grabbedRb.transform.position, puntoDeAgarre, realPullSpeed * Time.deltaTime);
@@ -140,27 +189,6 @@ public class Shoothook : MonoBehaviour
         }
     }
 
-    void checkWeight()
-    {
-        //AL LADO DEL RETURN EL SONIDARDO
-        Rigidbody rb = SistemaMira.Instance.AimRb;
-        
-
-        if (rb.mass >= 20)
-        {
-            
-            Buttom boton = rb.GetComponent<Buttom>();
-            if (boton != null)
-            {
-                boton.Press();
-            }
-            return; /*no hace nada (queda fachero)*/
-        }
-        else 
-        {
-            grabbedRb = rb;
-        }
-    }
     public void Release()
     {
         Destroy(joint);
@@ -179,16 +207,9 @@ public class Shoothook : MonoBehaviour
         return comp;
     }
 
+    void ActivarModoDirecto() => modoDirecto = true;
+    void DesactivarModoDirecto() => modoDirecto = false;
 
-    void ActivarModoDirecto()
-    {
-        modoDirecto = true;
-    }
-
-    void DesactivarModoDirecto()
-    {
-        modoDirecto = false;
-    }
     void StartDirecto(Vector3 punto)
     {
         puntoDirecto = punto;
