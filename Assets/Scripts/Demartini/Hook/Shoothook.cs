@@ -127,10 +127,10 @@ public class Shoothook : MonoBehaviour
 
         if (rb.mass >= 20)
         {
-            Buttom boton = rb.GetComponent<Buttom>();
-            if (boton != null)
+            IGrappable grappable = rb.GetComponent<IGrappable>();
+            if (grappable != null)
             {
-                boton.Press();
+                grappable.AlEnganchar();
             }
             return;
         }
