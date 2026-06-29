@@ -1,0 +1,316 @@
+# Blender 5.1.0 MTL File: 'Electric.blend'
+# www.blender.org
+
+newmtl Altın
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Copper/Metal035_2K-JPG_Color.jpg
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Copper/Metal035_2K-JPG_Roughness.jpg
+map_refl C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Copper/Metal035_2K-JPG_Metalness.jpg
+map_Bump -bm 1.000000 C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Copper/Metal035_2K-JPG_NormalDX.jpg
+
+newmtl Bakır
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Copper/Metal035_2K-JPG_Color.jpg
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Copper/Metal035_2K-JPG_Roughness.jpg
+map_refl C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Copper/Metal035_2K-JPG_Metalness.jpg
+
+newmtl Bench_Metal
+Ka 0.286364 0.286364 0.286364
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd -s 6 6 1 C:/Users/kusgu/Desktop/blender modeller/blender modeller/blender modeller/park/Blender 4 ile Blender Temelleri/Park/Bench/Textures/Metal046B_2K-JPG/Metal046B_2K-JPG_Color.jpg
+map_Ns -s 6 6 1 C:/Users/kusgu/Desktop/blender modeller/blender modeller/blender modeller/park/Blender 4 ile Blender Temelleri/Park/Bench/Textures/Metal046B_2K-JPG/Metal046B_2K-JPG_Roughness.jpg
+map_refl -s 6 6 1 C:/Users/kusgu/Desktop/blender modeller/blender modeller/blender modeller/park/Blender 4 ile Blender Temelleri/Park/Bench/Textures/Metal046B_2K-JPG/Metal046B_2K-JPG_Metalness.jpg
+map_Bump -s 6 6 1 -bm 3.400000 C:/Users/kusgu/Desktop/blender modeller/blender modeller/blender modeller/park/Blender 4 ile Blender Temelleri/Park/Bench/Textures/Metal046B_2K-JPG/Metal046B_2K-JPG_NormalDX.jpg
+
+newmtl Beyaz
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Texture/White Porscelian/Porcelain002_2K-JPG_Color.jpg
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/White Porscelian/Porcelain002_2K-JPG_Roughness.jpg
+map_Bump -bm 1.000000 C:/Users/kusgu/Desktop/blender modeller/electric/Texture/White Porscelian/Porcelain002_2K-JPG_NormalDX.jpg
+
+newmtl Gold.003
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Gold/Metal048A_2K-JPG_Color.jpg
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Gold/Metal048A_2K-JPG_Roughness.jpg
+map_refl C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Gold/Metal048A_2K-JPG_Metalness.jpg
+map_Bump -bm 1.000000 C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Gold/Metal048A_2K-JPG_NormalDX.jpg
+
+newmtl Gövde
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal R/Metal032_2K-JPG_Color.jpg
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal R/Metal032_2K-JPG_Roughness.jpg
+map_refl C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal R/Metal032_2K-JPG_Metalness.jpg
+map_Bump -bm 1.100000 C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal R/Metal032_2K-JPG_NormalDX.jpg
+
+newmtl Gövde.003
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Blue Plastic/Plastic005_2K-JPG_Color.jpg
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Blue Plastic/Plastic005_2K-JPG_Roughness.jpg
+map_Bump -bm 1.000000 C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Blue Plastic/Plastic005_2K-JPG_NormalDX.jpg
+
+newmtl Gümüş
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Silver/Metal061A_2K-JPG_Color.jpg
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Silver/Metal061A_2K-JPG_Roughness.jpg
+map_refl C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Silver/Metal061A_2K-JPG_Displacement.jpg
+map_Bump -bm 1.000000 C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Silver/Metal061A_2K-JPG_NormalDX.jpg
+
+newmtl Material.001
+Ns 880.710083
+Ka 0.084615 0.084615 0.084615
+Kd 0.618018 0.734578 0.800007
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl Metal
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal/Metal055A_2K-JPG_Color.jpg
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal/Metal055A_2K-JPG_Roughness.jpg
+map_refl C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal/Metal055A_2K-JPG_Metalness.jpg
+map_Bump -bm 1.300000 C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal/Metal055A_2K-JPG_NormalDX.jpg
+
+newmtl Pano_Gövde
+Ns 579.940918
+Ka 0.184615 0.184615 0.184615
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Referances/Pano kopya.png
+
+newmtl Pano_yazısı
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Referances/dalgic-pompa-panosu.png
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal R/Metal032_2K-JPG_Roughness.jpg
+map_refl C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal R/Metal032_2K-JPG_Metalness.jpg
+map_Bump -bm 1.000000 C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal R/Metal032_2K-JPG_NormalDX.jpg
+
+newmtl Plastic.003
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Texture/White Plastic/Plastic018B_2K-JPG_Color.jpg
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/White Plastic/Plastic018B_2K-JPG_Roughness.jpg
+
+newmtl Plastik
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.002448 0.001611 0.001611
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Red
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Red.001
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Siyah
+Ns 479.289978
+Ka 0.176923 0.176923 0.176923
+Kd 0.005239 0.005239 0.005239
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.600000
+d 1.000000
+illum 3
+
+newmtl Siyah.001
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Black Plastic/Plastic006_2K-JPG_Color.jpg
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Black Plastic/Plastic006_2K-JPG_Roughness.jpg
+map_Bump -bm 1.000000 C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Black Plastic/Plastic006_2K-JPG_NormalDX.jpg
+
+newmtl Siyah.002
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Black/Metal029_2K-JPG_Color.jpg
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Black/Metal029_2K-JPG_Roughness.jpg
+map_refl C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Black/Metal029_2K-JPG_Metalness.jpg
+
+newmtl Uyarı
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/kusgu/Desktop/blender modeller/electric/Referances/VT-ELK 002.png
+
+newmtl glass
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl glass.001
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl green
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl metal
+Ka 1.000000 1.000000 1.000000
+Kd 0.790826 0.800007 0.017552
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal/Metal055A_2K-JPG_Roughness.jpg
+map_refl C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal/Metal055A_2K-JPG_Metalness.jpg
+map_Bump -bm 1.000000 C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal/Metal055A_2K-JPG_NormalDX.jpg
+
+newmtl plastik
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl red
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl tuş
+Ka 1.000000 1.000000 1.000000
+Kd 0.005937 0.000756 0.001808
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Ns C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal R/Metal032_2K-JPG_Roughness.jpg
+map_refl C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal R/Metal032_2K-JPG_Metalness.jpg
+map_Bump -bm 1.000000 C:/Users/kusgu/Desktop/blender modeller/electric/Texture/Metal R/Metal032_2K-JPG_NormalDX.jpg
+
+newmtl tuş2
+Ka 0.653846 0.653846 0.653846
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd C:/Users/kusgu/Desktop/blender modeller/blender modeller/pano/referances/WL9-ELV217-1.png
+map_Ns C:/Users/kusgu/Desktop/blender modeller/blender modeller/pano/texture/Metal032_2K-JPG/Metal032_2K-JPG_Roughness.jpg
+map_refl C:/Users/kusgu/Desktop/blender modeller/blender modeller/pano/texture/Metal032_2K-JPG/Metal032_2K-JPG_Metalness.jpg
+
+newmtl yellow
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
