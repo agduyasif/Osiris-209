@@ -8,10 +8,10 @@ public class ControlCamera : MonoBehaviour
     public Transform Player;
     Vector2 move;
     public float LeftR;
-    float UpD;
+    public float UpD;
     [SerializeField] float sens = 1;
     SistemaMira mira;
-
+    public float xRotation = 0;
     /*[SerializeField] Camera Mcamera;
     [SerializeField] Image nothing;
     [SerializeField] Image CanGrab;
@@ -24,14 +24,15 @@ public class ControlCamera : MonoBehaviour
     void Update()
     {
         move = LookControl.action.ReadValue<Vector2>();
+        float factor = xRotation == 180 ? -1 : 1;
 
-        LeftR += move.x * sens * Time.deltaTime;
-        UpD += move.y * sens * Time.deltaTime;
+        LeftR += move.x * sens * Time.deltaTime * factor;
+        UpD += move.y * sens * Time.deltaTime * factor;
 
         UpD = Mathf.Clamp(UpD, -80, 80);
 
-        transform.rotation = Quaternion.Euler(-UpD, LeftR, 0);
-        Player.rotation = Quaternion.Euler(0, LeftR, 0);
+        transform.rotation = Quaternion.Euler(-UpD, LeftR, xRotation);
+        Player.rotation = Quaternion.Euler(0, LeftR, xRotation);
 
         //mira.MiraUpdate();
     }
