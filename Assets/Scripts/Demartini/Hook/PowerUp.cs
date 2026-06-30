@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
-
+using System.Collections;
+using UnityEngine.UIElements.Experimental;
 public class PowerUp : MonoBehaviour
 {
     public static event Action OnCharge;
@@ -12,11 +13,13 @@ public class PowerUp : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(DirectMode());
     }
-
-    private System.Collections.IEnumerator DirectMode()
+  
+    private IEnumerator DirectMode()
     {
         OnCharge?.Invoke();
         yield return new WaitForSeconds(10f);
         OffCharge?.Invoke();
     }
+
+
 }
