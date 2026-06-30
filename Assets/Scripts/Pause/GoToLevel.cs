@@ -8,7 +8,7 @@ public class GoToLevel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 7)
+        if (other.gameObject.layer == 6)
         {
             SceneManager.LoadScene(level);
         }

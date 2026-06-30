@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Controls.unity
     guid: 0be41244944730b4daacab5794874592
+  - enabled: 1
+    path: Assets/Scenes/Nivel_Cueva_1.unity
+    guid: ddf7ec264ac4ad743b16578c5f7b5d9f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
