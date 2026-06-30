@@ -2589,19 +2589,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8644022643442274909, guid: e846b20720d0152428e85579cced21e6, type: 3}
       propertyPath: m_LocalPosition.y
-<<<<<<< HEAD
       value: -17.4
       objectReference: {fileID: 0}
     - target: {fileID: 8644022643442274909, guid: e846b20720d0152428e85579cced21e6, type: 3}
       propertyPath: m_LocalPosition.z
       value: 291.4
-=======
-      value: 0.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 8644022643442274909, guid: e846b20720d0152428e85579cced21e6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1379.9
->>>>>>> 347387b88be35f34feee38286237efe4af0068d5
       objectReference: {fileID: 0}
     - target: {fileID: 8644022643442274909, guid: e846b20720d0152428e85579cced21e6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5379,15 +5371,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491763431}
   serializedVersion: 2
-<<<<<<< HEAD
   m_LocalRotation: {x: -0, y: -0.99998254, z: -0, w: 0.005921334}
   m_LocalPosition: {x: 0.17527373, y: 4.1048956, z: -17.632517}
   m_LocalScale: {x: 3.080385, y: 0.07822923, z: 16.79033}
-=======
-  m_LocalRotation: {x: -0, y: 0.0059213266, z: -0, w: 0.9999825}
-  m_LocalPosition: {x: 8.8, y: 31.445, z: 721}
-  m_LocalScale: {x: 192.79514, y: 1.940705, z: 327.34213}
->>>>>>> 347387b88be35f34feee38286237efe4af0068d5
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1957175493}
@@ -7947,13 +7933,6 @@ SceneRoots:
   - {fileID: 1329612656}
   - {fileID: 1578801894}
   - {fileID: 1966025351}
-<<<<<<< HEAD
-=======
-  - {fileID: 1148100460}
-  - {fileID: 759877447}
-  - {fileID: 1133669523}
-  - {fileID: 1491763436}
->>>>>>> 347387b88be35f34feee38286237efe4af0068d5
   - {fileID: 269776669}
   - {fileID: 1319217836}
   - {fileID: 1797791757}
@@ -7961,8 +7940,4 @@ SceneRoots:
   - {fileID: 1394006285}
   - {fileID: 1043539515}
   - {fileID: 174412634}
-<<<<<<< HEAD
   - {fileID: 1501987836342579205}
-=======
-  - {fileID: 1360556562}
->>>>>>> 347387b88be35f34feee38286237efe4af0068d5
