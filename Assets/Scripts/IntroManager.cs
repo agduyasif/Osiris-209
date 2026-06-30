@@ -8,13 +8,30 @@ public class IntroManager : MonoBehaviour
     [SerializeField] private Animator _screenAnimator; 
 
     [Header("Jugador")]
-    [SerializeField] private MonoBehaviour _playerScript; 
+    [SerializeField] private MonoBehaviour _playerScript;
+    private static bool introVista = false;
 
-    void Start()
+    /*void Start()
     {
         if (_playerScript != null)
             _playerScript.enabled = false;
 
+        StartCoroutine(SecuenciaIntro());
+    }*/
+    void Start()
+    {
+        if (introVista)
+        {
+            if (_playerScript != null)
+                _playerScript.enabled = true;
+            _screenAnimator.gameObject.transform.parent.gameObject.SetActive(false);
+            return;
+        }
+
+        introVista = true;
+
+        if (_playerScript != null)
+            _playerScript.enabled = false;
         StartCoroutine(SecuenciaIntro());
     }
 
