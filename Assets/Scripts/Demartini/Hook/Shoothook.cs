@@ -14,7 +14,7 @@ public class Shoothook : MonoBehaviour
     [Header("Configuración del Jugador")]
     [SerializeField] Transform player;
     [SerializeField] Rigidbody playerRb;
-    public float pullSpeed { get; set; } = 1;
+    public float pullSpeed { get; set; } = 10;
 
     [Header("Sistema de Audio")]
     [SerializeField] AudioSource As;

@@ -167,6 +167,13 @@ public class Player : MonoBehaviour
             currentCenter.y = bottomY + (currentSize.y / 2f);
             col.center = currentCenter;
         }
+
+       
+    }
+
+    public bool IsMoving()
+    {
+        return control.GetInput().magnitude > 0.1f;
     }
     #endregion
 }

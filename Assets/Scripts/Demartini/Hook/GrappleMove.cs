@@ -29,7 +29,7 @@ public class GrappleMove
         Vector3 tangentialVel = rb.linearVelocity - Vector3.Project(rb.linearVelocity, ropeDir);
         currentSwingSpeed = tangentialVel.magnitude;
         float scaledForce = pushForce * Mathf.Max(currentSwingSpeed, 1f);
-        if (currentSwingSpeed > 9f)
+        if (currentSwingSpeed >14f)
         {
             Debug.LogError("LimitSpeed");
             return;

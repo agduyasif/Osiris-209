@@ -22,7 +22,7 @@ public class IntroManager : MonoBehaviour
             if (_playerScript != null)
                 _playerScript.enabled = true;
 
-            _screenAnimator.gameObject.transform.parent.gameObject.SetActive(false);
+            _screenAnimator.gameObject.SetActive(false);
 
             ActivarAmbiente();
             return;

@@ -45,4 +45,9 @@ public class CheckpointManager : MonoBehaviour
     {
         return checkpoints[currentIndex].transform.position;
     }
+
+    public static void ResetSavedIndex()
+    {
+        savedIndex = 0;
+    }
 }

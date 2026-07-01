@@ -10,6 +10,7 @@ public class GoToLevel : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
+            CheckpointManager.ResetSavedIndex();
             SceneManager.LoadScene(level);
         }
     }
