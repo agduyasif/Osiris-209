@@ -6,7 +6,7 @@ public class SwimMove
     Rigidbody rb;
     Transform cam;
     Control control;
-    float swinForce = 10;
+    float swinForce = 40;
 
     public SwimMove(Rigidbody rb, Transform cam, Control control)
     {

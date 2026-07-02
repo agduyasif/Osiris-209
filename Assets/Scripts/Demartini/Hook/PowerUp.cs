@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UIElements.Experimental;
 public class PowerUp : MonoBehaviour
 {
+    [SerializeField] ParticleSystem particulas;
     public static event Action OnCharge;
     public static event Action OffCharge;
 
@@ -17,8 +17,10 @@ public class PowerUp : MonoBehaviour
     private IEnumerator DirectMode()
     {
         OnCharge?.Invoke();
+        particulas.Play();
         yield return new WaitForSeconds(10f);
         OffCharge?.Invoke();
+        particulas.Stop();
     }
 
 

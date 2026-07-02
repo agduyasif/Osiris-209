@@ -29,7 +29,7 @@ public class GrappleMove
         Vector3 tangentialVel = rb.linearVelocity - Vector3.Project(rb.linearVelocity, ropeDir);
         currentSwingSpeed = tangentialVel.magnitude;
         float scaledForce = pushForce * Mathf.Max(currentSwingSpeed, 1f);
-        if (currentSwingSpeed >14f)
+        if (currentSwingSpeed > 40f)
         {
             Debug.LogError("LimitSpeed");
             return;
@@ -45,10 +45,11 @@ public class GrappleMove
 
     public void Jump()
     {
-        float jumpForce = baseJump + currentSwingSpeed;
+        float velocidad = Mathf.Min(currentSwingSpeed, 20f);
+        float jumpForce = baseJump + velocidad;
         shoothook.Release();
 
-        Vector3 jumpDir = (rb.linearVelocity.normalized + Vector3.up * 0.3f).normalized;
+        Vector3 jumpDir = (rb.linearVelocity.normalized);
         rb.AddForce(jumpDir * jumpForce, ForceMode.Impulse);
     }
    

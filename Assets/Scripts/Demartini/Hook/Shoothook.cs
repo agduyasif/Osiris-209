@@ -177,7 +177,10 @@ public class Shoothook : MonoBehaviour
 
             float distance = Vector3.Distance(grabbedRb.transform.position, puntoDeAgarre);
             InHook.inHook(grabbedRb);
-
+            line.positionCount = 2;
+            line.enabled = true;
+            line.SetPosition(0, transform.position);
+            line.SetPosition(1, grabbedRb.transform.position);
             if (distance > 3f)
             {
                 grabbedRb.transform.position = Vector3.MoveTowards(grabbedRb.transform.position, puntoDeAgarre, realPullSpeed * Time.deltaTime);

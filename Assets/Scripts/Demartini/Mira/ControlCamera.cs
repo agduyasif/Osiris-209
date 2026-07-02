@@ -9,7 +9,7 @@ public class ControlCamera : MonoBehaviour
     Vector2 move;
     public float LeftR;
     public float UpD;
-    [SerializeField] float sens = 1;
+    float sens = 0.1f;
     SistemaMira mira;
     public float xRotation = 0;
     /*[SerializeField] Camera Mcamera;
@@ -26,8 +26,8 @@ public class ControlCamera : MonoBehaviour
         move = LookControl.action.ReadValue<Vector2>();
         float factor = xRotation == 180 ? -1 : 1;
 
-        LeftR += move.x * sens * Time.deltaTime * factor;
-        UpD += move.y * sens * Time.deltaTime * factor;
+        LeftR += move.x * sens * factor;
+        UpD += move.y * sens * factor;
 
         UpD = Mathf.Clamp(UpD, -80, 80);
 
