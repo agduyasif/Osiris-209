@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low poly rocks and terrain pack
+* source:	https://sketchfab.com/3d-models/low-poly-rocks-and-terrain-pack-9ae953d0368f4d34ad985ada938fcc26
+* author:	daemoniic (https://sketchfab.com/daemoniic)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low poly rocks and terrain pack" (https://sketchfab.com/3d-models/low-poly-rocks-and-terrain-pack-9ae953d0368f4d34ad985ada938fcc26) by daemoniic (https://sketchfab.com/daemoniic) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

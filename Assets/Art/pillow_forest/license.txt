@@ -1,0 +1,11 @@
+Model Information:
+* title:	Pillow Forest
+* source:	https://sketchfab.com/3d-models/pillow-forest-1d9427cf949c496086b6385107c4bcc7
+* author:	nanchark (https://sketchfab.com/nanchark)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Pillow Forest" (https://sketchfab.com/3d-models/pillow-forest-1d9427cf949c496086b6385107c4bcc7) by nanchark (https://sketchfab.com/nanchark) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

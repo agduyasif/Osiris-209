@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low Poly Water Well
+* source:	https://sketchfab.com/3d-models/low-poly-water-well-2f9ad108cc6249ed80df1f83ab78ed45
+* author:	Ünal Altındağ (https://sketchfab.com/unalaltindag)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low Poly Water Well" (https://sketchfab.com/3d-models/low-poly-water-well-2f9ad108cc6249ed80df1f83ab78ed45) by Ünal Altındağ (https://sketchfab.com/unalaltindag) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
