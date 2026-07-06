@@ -71,12 +71,11 @@ public class Movement
         }
         else
         {
-            rb.AddForce(dir * currentSpeed, ForceMode.Acceleration);
             if (horizontalVel.magnitude > currentSpeed)
             {
-                Vector3 limited = horizontalVel.normalized * currentSpeed;
-                rb.linearVelocity = new Vector3(limited.x, rb.linearVelocity.y, limited.z);
+                return;
             }
+            rb.AddForce(dir * currentSpeed, ForceMode.Acceleration);
         }
 
         anim.SetBool("IsJumping", !grounded);

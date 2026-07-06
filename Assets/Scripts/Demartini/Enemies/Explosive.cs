@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 public class Explosive : MonoBehaviour
 {
     float time;
-    [SerializeField] MeshRenderer expl;
+    [SerializeField] GameObject efectoExpl;
+    [SerializeField] MeshRenderer granademesh;
     Rigidbody rb;
     float force = 5;
     float expTime = 8;
@@ -36,8 +37,8 @@ public class Explosive : MonoBehaviour
 
             Collider[] objs = Physics.OverlapSphere(transform.position, 2);
 
-            expl.enabled = true;
-
+            efectoExpl.SetActive(true);
+            granademesh.enabled = false;
             foreach (var item in objs)
             {
                 if (item.TryGetComponent<Player>(out var player))
