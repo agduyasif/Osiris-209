@@ -29,10 +29,7 @@ public class Control
         Vector3 dir = getDir();
 
         // Control de Agachado (Shift Izquierdo)
-        if (Keyboard.current.leftShiftKey.wasPressedThisFrame)
-        {
-            movement.ToggleCrouch();
-        }
+       
 
         movement.move(dir, hasControl);
 
