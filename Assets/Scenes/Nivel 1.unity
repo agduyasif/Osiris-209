@@ -12623,7 +12623,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 2220664940dc5b84584df5179554b066, type: 3}
+  m_Resource: {fileID: 8300000, guid: 85a1e2d9261710e49a30d0ea91bdf195, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -39826,7 +39826,7 @@ PrefabInstance:
       objectReference: {fileID: 2109043469}
     - target: {fileID: 6298724296206692452, guid: cc221b54e20ad044a90dd5e23a7443a7, type: 3}
       propertyPath: m_VersionIndex
-      value: 553
+      value: 607
       objectReference: {fileID: 0}
     - target: {fileID: 6676129939600032982, guid: cc221b54e20ad044a90dd5e23a7443a7, type: 3}
       propertyPath: m_Mesh
@@ -39834,7 +39834,7 @@ PrefabInstance:
       objectReference: {fileID: 2109043469}
     - target: {fileID: 6676129939600032982, guid: cc221b54e20ad044a90dd5e23a7443a7, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7405324334120430701, guid: cc221b54e20ad044a90dd5e23a7443a7, type: 3}
       propertyPath: m_Name
@@ -39844,7 +39844,11 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 187d261d2b7a39841b93b4fd74b046c7, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 555482833125029263, guid: cc221b54e20ad044a90dd5e23a7443a7, type: 3}
+    - {fileID: 5123209813626169063, guid: cc221b54e20ad044a90dd5e23a7443a7, type: 3}
+    - {fileID: 1509481585624561004, guid: cc221b54e20ad044a90dd5e23a7443a7, type: 3}
+    - {fileID: 2027334291571425416, guid: cc221b54e20ad044a90dd5e23a7443a7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
