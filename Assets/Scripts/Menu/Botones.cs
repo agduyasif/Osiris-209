@@ -5,7 +5,7 @@ public class MenuPrincipal : MonoBehaviour
 {
     public void Jugar()
     {
-        SceneManager.LoadScene("Nivel 1");
+        SceneManager.LoadScene("Carga");
     }
     public void IrAControles()
     {
