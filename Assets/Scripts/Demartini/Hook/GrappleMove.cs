@@ -9,7 +9,7 @@ public class GrappleMove
     Vector3 anchorPointo;
     float currentSwingSpeed;
     Transform cam;
-    float baseJump = 0f;
+    // float baseJump = 0f;
     Shoothook shoothook;
 
 

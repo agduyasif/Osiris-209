@@ -10,6 +10,7 @@ public class PausaManager : MonoBehaviour
     public Volume postProcessVolume;
     private bool estaPausado = false;
     private DepthOfField dof;
+    [SerializeField] private GameObject _volumeMenu;
 
     void Start()
     {
@@ -18,6 +19,8 @@ public class PausaManager : MonoBehaviour
             dof.active = false;
         }
         if (menuPausaPanel != null) menuPausaPanel.SetActive(false);
+
+        if (_volumeMenu != null) _volumeMenu.SetActive(false);
     }
 
     void Update()
@@ -25,7 +28,6 @@ public class PausaManager : MonoBehaviour
         
         if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
         {
-            Debug.Log("Tecla P presionada correctamente");
             if (estaPausado) Reanudar();
             else Pausar();
         }
@@ -49,6 +51,8 @@ public class PausaManager : MonoBehaviour
         if (dof != null) dof.active = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        if (menuPausaPanel != null) menuPausaPanel.SetActive(false);
+        if (_volumeMenu != null) _volumeMenu.SetActive(false);
     }
 
     public void IrAlMenu()
@@ -56,4 +60,11 @@ public class PausaManager : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
+
+    public void Volumen()
+    {
+        if (menuPausaPanel != null) menuPausaPanel.SetActive(false);
+        if (_volumeMenu != null) _volumeMenu.SetActive(true);
+    }
+
 }
