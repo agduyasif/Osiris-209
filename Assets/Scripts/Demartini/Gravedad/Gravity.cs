@@ -1,5 +1,6 @@
-using System.ComponentModel;
+
 using UnityEngine;
+using System.Collections;
 
 public class Gravity : MonoBehaviour
 {
@@ -17,16 +18,21 @@ public class Gravity : MonoBehaviour
         {
             Physics.gravity = new Vector3(0, 9.81f, 0);
             GravityInvertedPart.Play();
-            camara.xRotation = 180;
         }
         else
         {
             Physics.gravity = new Vector3(0, -9.81f, 0);
-            camara.xRotation = 0;
             GravityPart.Play();
         }
-        
 
+        StopAllCoroutines();
+        StartCoroutine(RotarCamara());
+    }
+
+    private IEnumerator RotarCamara()
+    {
+        yield return new WaitForSeconds(1f);
+        camara.xRotation = invertido ? 180 : 0;
     }
 
 }

@@ -181,7 +181,8 @@ public class Shoothook : MonoBehaviour
             line.enabled = true;
             line.SetPosition(0, transform.position);
             line.SetPosition(1, grabbedRb.transform.position);
-            if (distance > 3f)
+            float size = grabbedRb.GetComponent<Collider>().bounds.size.magnitude;
+            if (distance > 10f)
             {
                 grabbedRb.transform.position = Vector3.MoveTowards(grabbedRb.transform.position, puntoDeAgarre, realPullSpeed * Time.deltaTime);
             }

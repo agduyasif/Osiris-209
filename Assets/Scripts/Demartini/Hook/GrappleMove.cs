@@ -45,12 +45,13 @@ public class GrappleMove
 
     public void Jump()
     {
-        float velocidad = Mathf.Min(currentSwingSpeed, 20f);
-        float jumpForce = baseJump + velocidad;
-        shoothook.Release();
+        /* float velocidad = Mathf.Min(currentSwingSpeed, 20f) * 0.3f;
+         float jumpForce = baseJump + velocidad;
+         shoothook.Release();
 
-        Vector3 jumpDir = (rb.linearVelocity.normalized);
-        rb.AddForce(jumpDir * jumpForce, ForceMode.Impulse);
+         Vector3 jumpDir = (rb.linearVelocity.normalized);
+         rb.AddForce(jumpDir * jumpForce, ForceMode.Impulse);*/
+        shoothook.Release();
     }
    
 

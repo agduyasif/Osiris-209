@@ -18,6 +18,7 @@ public class Movement
     private readonly AudioSource audioSource;
     private readonly AudioClip walkSound;
     private readonly AudioClip jumpSound;
+    float baseSpeed;
     #endregion
 
     #region CONSTRUCTOR
@@ -146,6 +147,11 @@ public class Movement
 
         if (reproducir && !audioSource.isPlaying) audioSource.Play();
         else if (!reproducir && audioSource.isPlaying) audioSource.Pause();
+    }
+
+    public void RunBoost(bool activo)
+    {
+        speed = activo ? baseSpeed * 1.25f : baseSpeed;
     }
     #endregion
 }

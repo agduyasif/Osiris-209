@@ -80,17 +80,18 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        // Si el jugador está haciendo equilibrio, congelamos el resto de la lógica
-        if (PB != null && PB.IsBalancing)
-        {
-            return;
-        }
-
-        // Manejo de estados: Grappling vs Movimiento Normal
-        
-        Move?.Invoke(); 
-        // Procesar transición de altura
+        if (PB != null && PB.IsBalancing) return;
+        Move?.Invoke();
         CrouchingHeight();
+    }
+
+    private void FixedUpdate()
+    {
+        if (PB != null && PB.IsBalancing) return;
+        if (isGrappling && !movement.IsGrounded())
+        {
+            grappleMove.Push();
+        }
     }
 
     private void OnDrawGizmos()
@@ -111,7 +112,6 @@ public class Player : MonoBehaviour
         }
         else
         {
-            grappleMove.Push();
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 grappleMove.Jump();
@@ -119,7 +119,8 @@ public class Player : MonoBehaviour
         }
     }
 
-  
+
+
 
 
     private void MovimientoNormal()
