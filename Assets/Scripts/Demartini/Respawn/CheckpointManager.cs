@@ -8,7 +8,7 @@ public class CheckpointManager : MonoBehaviour
     Transform player;
     int currentIndex = 0;
     public static int savedIndex = 0;
-
+    ControlCamera camara;
 
 
     private void Awake()
@@ -16,12 +16,15 @@ public class CheckpointManager : MonoBehaviour
         Instance = this;
         currentIndex = savedIndex;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        camara = FindAnyObjectByType<ControlCamera>();
+  
     }
 
     private void Start()
     {
         player.position = checkpoints[currentIndex].transform.position;
         player.forward = checkpoints[currentIndex].transform.forward;
+        camara.LeftR = 90;
 
         for (int i = 0; i <= currentIndex; i++)
         {

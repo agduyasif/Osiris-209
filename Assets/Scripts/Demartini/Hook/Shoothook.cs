@@ -26,7 +26,7 @@ public class Shoothook : MonoBehaviour
 
     [Header("Estados del Gancho")]
     bool modoDirecto = false;
-    bool yendoDirecto = false;
+    public bool yendoDirecto = false;
     Vector3 puntoDirecto;
 
     private void OnEnable()
@@ -211,8 +211,8 @@ public class Shoothook : MonoBehaviour
         return comp;
     }
 
-    void ActivarModoDirecto() => modoDirecto = true;
-    void DesactivarModoDirecto() => modoDirecto = false;
+    public void ActivarModoDirecto() => modoDirecto = true;
+    public void DesactivarModoDirecto() => modoDirecto = false;
 
     void StartDirecto(Vector3 punto)
     {
