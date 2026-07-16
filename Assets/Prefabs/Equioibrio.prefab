@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3910940255251792410}
   - component: {fileID: 1564906203038697071}
-  - component: {fileID: 555482833125029263}
   m_Layer: 0
   m_Name: Inicio
   m_TagString: Equilibrio
@@ -52,35 +51,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9508266, y: 1.045981, z: 1}
-  m_Center: {x: 0.47541252, y: 0.022985863, z: 0}
---- !u!54 &555482833125029263
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3528894708418463887}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Size: {x: 1.9508266, y: 13.589522, z: 1}
+  m_Center: {x: 0.47538757, y: 6.2947564, z: 0.000000011609061}
 --- !u!1 &4318607445943923131
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +63,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9152646508031572771}
   - component: {fileID: 6117943232985889338}
-  - component: {fileID: 2027334291571425416}
   m_Layer: 0
   m_Name: Final (1)
   m_TagString: Fin
@@ -133,35 +104,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4233199, y: 2.4583063, z: 1}
-  m_Center: {x: -0.21166085, y: 0.72915024, z: 0}
---- !u!54 &2027334291571425416
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4318607445943923131}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Size: {x: 1.4233204, y: 4.5586395, z: 1}
+  m_Center: {x: -0.21166499, y: 1.7793175, z: -0.000000008667489}
 --- !u!1 &6928991262423279929
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 178541315933832471}
   - component: {fileID: 2611098215210025441}
-  - component: {fileID: 5123209813626169063}
   m_Layer: 0
   m_Name: Final
   m_TagString: Fin
@@ -214,35 +157,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5535935, y: 2.0985637, z: 1}
-  m_Center: {x: 0.27679446, y: 0.54928005, z: 0}
---- !u!54 &5123209813626169063
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6928991262423279929}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Size: {x: 1.5535935, y: 3.6807797, z: 1}
+  m_Center: {x: 0.2767913, y: 1.3403881, z: 0.0000000015081293}
 --- !u!1 &7405324334120430701
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,7 +2064,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2715506477708505084}
   - component: {fileID: 4052763783512544120}
-  - component: {fileID: 1509481585624561004}
   m_Layer: 0
   m_Name: Inicio (1)
   m_TagString: Equilibrio
@@ -2190,32 +2105,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0633063, y: 0.95558614, z: 1}
-  m_Center: {x: -0.53165144, y: -0.02221055, z: 0}
---- !u!54 &1509481585624561004
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7852919658621172317}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Size: {x: 2.0633063, y: 12.079667, z: 1}
+  m_Center: {x: -0.53167355, y: 5.53983, z: -0.0000000054278573}
