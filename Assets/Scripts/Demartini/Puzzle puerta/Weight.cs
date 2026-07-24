@@ -24,7 +24,7 @@ public class Weight : MonoBehaviour
     {
         restPos = platform.position;
         pressedPos = restPos + Vector3.down * pressDepth;
-        door.openHeight = pressDepth;
+        if (door != null) door.openHeight = pressDepth;
     }
 
     private void FixedUpdate()

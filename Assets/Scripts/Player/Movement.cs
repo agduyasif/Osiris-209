@@ -74,6 +74,13 @@ public class Movement
         {
             if (horizontalVel.magnitude > currentSpeed)
             {
+                Vector3 velDir = horizontalVel.normalized;
+                float haciaAdelante = Vector3.Dot(dir, velDir);
+                if (haciaAdelante > 0)
+                {
+                    dir = dir - velDir * haciaAdelante;
+                }
+                rb.AddForce(dir * currentSpeed, ForceMode.Acceleration);
                 return;
             }
             rb.AddForce(dir * currentSpeed, ForceMode.Acceleration);
