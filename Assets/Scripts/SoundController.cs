@@ -1,10 +1,20 @@
 using UnityEngine;
-
+using System.Collections.Generic;
 public class SoundController : MonoBehaviour
 {
     [Header("Configuración de Audios")]
     [SerializeField] private AudioClip sonidoPiedra;
     [SerializeField] private AudioClip sonidoMadera;
+    Dictionary<MaterialList, AudioClip> sonidos;
+
+    void Awake()
+    {
+        sonidos = new Dictionary<MaterialList, AudioClip>
+    {
+        { MaterialList.Piedra, sonidoPiedra },
+        { MaterialList.Madera, sonidoMadera }
+    };
+    }
 
     public AudioClip IMP_Sound(GameObject objectIMP)
     {
@@ -13,12 +23,9 @@ public class SoundController : MonoBehaviour
 
         if (superficie != null)
         {
-            switch (superficie.materialType)
+            if (sonidos.ContainsKey(superficie.materialType))
             {
-                case MaterialList.Piedra:
-                    return sonidoPiedra;
-                case MaterialList.Madera:
-                    return sonidoMadera;
+                return sonidos[superficie.materialType];
             }
         }
 

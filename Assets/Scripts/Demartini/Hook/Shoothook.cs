@@ -1,5 +1,4 @@
-using System;
-using Unity.VisualScripting;
+Ôªøusing System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,7 +10,7 @@ public class Shoothook : MonoBehaviour
     SpringJoint joint;
     Rigidbody grabbedRb;
 
-    [Header("ConfiguraciÛn del Jugador")]
+    [Header("Configuraci√≥n del Jugador")]
     [SerializeField] Transform player;
     [SerializeField] Rigidbody playerRb;
     public float pullSpeed { get; set; } = 10;
@@ -28,6 +27,27 @@ public class Shoothook : MonoBehaviour
     bool modoDirecto = false;
     public bool yendoDirecto = false;
     Vector3 puntoDirecto;
+
+    Func<float, float> calculPull = mass => 10 / Math.Max(0.1f, mass);
+
+    ConfigJoint config = new ConfigJoint    // ‚Üê ac√°, con las variables
+    {
+        spring = 18,
+        damper = 12,
+        massScale = 3,
+        maxDistance = 0,
+        minDistance = 0
+    };
+
+    public struct ConfigJoint
+    {
+        public float spring;
+        public float damper;
+        public float massScale;
+        public float maxDistance;
+        public float minDistance;
+    }
+
 
     private void OnEnable()
     {
@@ -68,7 +88,7 @@ public class Shoothook : MonoBehaviour
             Release();
         }
 
-        // LÛgica de actualizaciÛn fÌsica y de lÌnea
+        // L√≥gica de actualizaci√≥n f√≠sica y de l√≠nea
         if (joint != null)
         {
             line.SetPosition(0, transform.position);
@@ -103,9 +123,9 @@ public class Shoothook : MonoBehaviour
         joint.maxDistance = distanceFrom;
         joint.minDistance = distanceFrom * 0.25f;
 
-        joint.spring = 18;
-        joint.damper = 12;
-        joint.massScale = 3;
+        joint.spring = config.spring;
+        joint.damper = config.damper;
+        joint.massScale = config.massScale;
 
         line.positionCount = 2;
         line.enabled = true;
@@ -115,7 +135,7 @@ public class Shoothook : MonoBehaviour
 
         particlehit(grapplePoint);
 
-        // --- L”GICA DE SONIDO  ---
+        // --- L√ìGICA DE SONIDO  ---
         SoundIMP(SistemaMira.Instance.AimRb != null ? SistemaMira.Instance.AimRb.gameObject : null);
     }
 
@@ -140,7 +160,7 @@ public class Shoothook : MonoBehaviour
         }
     }
 
-    // FunciÛn auxiliar para centralizar la reproducciÛn de audios por superficie
+    // Funci√≥n auxiliar para centralizar la reproducci√≥n de audios por superficie
     void SoundIMP(GameObject obj)
     {
         AudioClip clipDinamico = null;
@@ -172,7 +192,7 @@ public class Shoothook : MonoBehaviour
     {
         if (grabbedRb != null)
         {
-            float realPullSpeed = pullSpeed / Mathf.Max(0.1f, grabbedRb.mass);
+            float realPullSpeed = calculPull(grabbedRb.mass);
             Vector3 puntoDeAgarre = transform.position + transform.forward * 1f;
 
             float distance = Vector3.Distance(grabbedRb.transform.position, puntoDeAgarre);
