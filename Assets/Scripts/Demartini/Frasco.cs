@@ -1,26 +1,13 @@
 using UnityEngine;
-
-public class Frasco : MonoBehaviour
+using UnityEngine.UI;
+public class Frasco : agarrable
 {
-    [SerializeField] Transform player;
     [SerializeField] GameObject frascoluzPre;
-    Rigidbody rb;
-
-    private void Start()
+    [SerializeField] Image frascoVacio;
+    protected override void alAgarrar()
     {
-        rb = GetComponent<Rigidbody>();
+        Instantiate(frascoluzPre, player.position, Quaternion.identity, player);
+        frascoVacio.enabled = true;
     }
-
-    void Update()
-    {
-        if (rb.linearVelocity.magnitude > 0.1f) 
-        {
-            float distancia = Vector3.Distance(transform.position, player.position);
-            if (distancia < 3)
-            {
-                Instantiate(frascoluzPre, player.position, Quaternion.identity, player);
-                Destroy(gameObject);
-            }
-        }
-    }
+   
 }
