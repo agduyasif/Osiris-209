@@ -9,6 +9,7 @@ public class TriggerCinematica : MonoBehaviour
     [SerializeField] private float _travelTime = 5f;
     [SerializeField] private GameObject modeloGancho;
     [SerializeField] private GameObject _uiCredits;
+    [SerializeField] private GameObject _coshairCanvas;
     [SerializeField] private AudioSource _horrorSound;
 
     [Header("Bandas Laterales")]
@@ -52,7 +53,8 @@ public class TriggerCinematica : MonoBehaviour
 
                 if (modeloGancho != null)
                 {
-                    modeloGancho.SetActive(false); 
+                    modeloGancho.SetActive(false);
+                    _coshairCanvas.SetActive(false);
                 }
 
                 Camera principalCamara = Camera.main;
