@@ -10,6 +10,10 @@ TagManager:
   - Fin
   - Equilibrio
   - Grappable
+  - MedioLleno
+  - Lleno
+  - vacio
+  - Pared
   layers:
   - Default
   - TransparentFX
