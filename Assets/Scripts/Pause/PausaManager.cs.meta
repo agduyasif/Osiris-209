@@ -1,2 +1,17 @@
 fileFormatVersion: 2
 guid: d6b58d8c1c74c3a438bea9664ad57617
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - menuPausaPanel: {instanceID: 0}
+  - _volumeMenu: {instanceID: 0}
+  - miraUI: {fileID: 377367441583262055, guid: b2f165e2aaf6fff47a8ebbab7430c611, type: 3}
+  - postProcessVolume: {instanceID: 0}
+  - scriptJugador: {instanceID: 0}
+  - scriptCamara: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

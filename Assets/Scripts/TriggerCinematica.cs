@@ -11,6 +11,7 @@ public class TriggerCinematica : MonoBehaviour
     [SerializeField] private GameObject _uiCredits;
     [SerializeField] private GameObject _coshairCanvas;
     [SerializeField] private AudioSource _horrorSound;
+    [SerializeField] private AudioSource _bgMusic;
 
     [Header("Bandas Laterales")]
     [SerializeField] private RectTransform _bandaINF;
@@ -65,6 +66,7 @@ public class TriggerCinematica : MonoBehaviour
 
                     if (_horrorSound != null)
                     {
+                        _bgMusic.Stop();
                         _horrorSound.Play();
                     }
 
@@ -109,6 +111,8 @@ public class TriggerCinematica : MonoBehaviour
         if (_uiCredits != null)
         {
             _uiCredits.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             _bandaSUP.sizeDelta = new Vector2(_bandaSUP.sizeDelta.x, 0);
             _bandaINF.sizeDelta = new Vector2(_bandaINF.sizeDelta.x, 0);
         }
