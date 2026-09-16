@@ -98652,7 +98652,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b804e48b1fc28df4d97b3a0b0cd6f134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 1621290816}
 --- !u!1001 &717947375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -227693,7 +227692,7 @@ PrefabInstance:
     - target: {fileID: 3600628746135156133, guid: 73df75bdab8b9204e80363c1ba29e639, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5f8d4deac63aab746adad5e54cdc04f2, type: 2}
+      objectReference: {fileID: 2100000, guid: 7280cd894f446ae4aa0a2e8fa375903b, type: 2}
     - target: {fileID: 4300388073448591729, guid: 73df75bdab8b9204e80363c1ba29e639, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -273985,7 +273984,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: a68feed8fa4d1ac45b74de460934ff28, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: bfe8afee81212a24c892e9c87b17f6cd, type: 2}
+      objectReference: {fileID: 2100000, guid: a308bc2c759d00746953fd14ad185bfa, type: 2}
     - target: {fileID: 919132149155446097, guid: a68feed8fa4d1ac45b74de460934ff28, type: 3}
       propertyPath: m_Name
       value: ROCK_MESH_06
