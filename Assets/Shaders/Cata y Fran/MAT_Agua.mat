@@ -38,9 +38,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alt_Oleaje: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    - _Vel_Oleaje: 1
+    m_Colors:
+    - _Color_Agua: {r: 0.16113386, g: 0.4811321, b: 0.44750315, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &1721742077426315577
