@@ -11,14 +11,28 @@ public class Explosive : MonoBehaviour
 
     [Header("Sonido")]
     [SerializeField] private AudioClip explSound;
-    private bool hasExpl = false; 
+    private bool hasExpl = false;
 
-    private void Start()
+    BombPool pool;
+
+    public void SetPool(BombPool _pool)
     {
+        pool = _pool;
+    }
+    private void OnEnable()
+    {
+        time = 0;
+        hasExpl = false;
+        granademesh.enabled = true;
+        efectoExpl.SetActive(false);
+
         rb = GetComponent<Rigidbody>();
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
         rb.AddForce(Vector3.up * force, ForceMode.Impulse);
         rb.AddForce(transform.forward * force, ForceMode.Impulse);
     }
+ 
 
     private void Update()
     {
@@ -50,7 +64,7 @@ public class Explosive : MonoBehaviour
                     wall.destroyWall();
                 }
             }
-            if (time > expTime + 1) { Destroy(gameObject); }
+            if (time > expTime + 1) { pool.ReturnBomb(gameObject); }
         }
     }
 

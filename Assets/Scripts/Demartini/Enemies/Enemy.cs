@@ -4,9 +4,9 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] Transform player;
     float timer;
-    [SerializeField] GameObject granade;
     [SerializeField] Transform spawnGranade;
     [SerializeField] float range = 10;
+    [SerializeField] BombFactory factory;
     private void Update()
     {
         timer += Time.deltaTime;
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
         {
             if (timer > 8) 
             {
-                Instantiate(granade, spawnGranade.transform.position, spawnGranade.rotation);
+                factory.create(spawnGranade.position, spawnGranade.rotation);
                 timer = 0;
             }
         }
