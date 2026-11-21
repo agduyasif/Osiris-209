@@ -51,10 +51,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistanciaJugador: 26.510008
+    - _DistanciaJugador: 10.371639
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _ColorBase: {r: 1.8144625, g: 0.10612885, b: 0.9999405, a: 0}
+    - _ColorBase: {r: 0.46036646, g: 1.8144627, b: 0.11399766, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
